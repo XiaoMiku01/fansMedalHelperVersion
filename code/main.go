@@ -8,10 +8,11 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.LoadHTMLGlob("templates/*")
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			"app": "Gin",
+		c.JSON(http.StatusOK, gin.H{
+			"version":   "0.0.1",
+			"changelog": "Hello\n World",
+			"notice":    "",
 		})
 	})
 	router.Run(":9000")
