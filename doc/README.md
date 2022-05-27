@@ -24,7 +24,7 @@
 
 #### 配置函数
 
-	- 选择 **从零开始创建**，函数名随便，运行环境选择 **Python3.9**, 使用示例代码，**处理事件请求**，请求处理程序填 **main.run**，如图：[<img src="https://s1.ax1x.com/2022/05/27/XnPXcD.md.png" alt="XnPXcD.md.png" style="zoom:80%;" />](https://imgtu.com/i/XnPXcD)
+- 选择 **从零开始创建**，函数名随便，运行环境选择 **Python3.9**, 使用示例代码，**处理事件请求**，请求处理程序填 **main.run**，如图：[<img src="https://s1.ax1x.com/2022/05/27/XnPXcD.md.png" alt="XnPXcD.md.png" style="zoom:80%;" />](https://imgtu.com/i/XnPXcD)
 
 - 配置触发器，类型选择 **定时触发器**，名称随便填，触发方式选择 **指定时间**，指定时间填你想脚本每天开始执行的时间，下面的不用填，点击 **创建**，如图：
 
@@ -34,7 +34,7 @@
 
 ​	[<img src="https://s1.ax1x.com/2022/05/27/Xnkght.md.png" alt="Xnkght.md.png" style="zoom:80%;" />]()
 
-- **执行超时时间** 填 8000、9000 都行，**确定**
+- **执行超时时间** 就填 86400秒（24小时） ，**确定**
 
 [<img src="https://s1.ax1x.com/2022/05/27/XnAF9x.md.png" alt="XnAF9x.md.png" style="zoom:80%;" />]()
 
