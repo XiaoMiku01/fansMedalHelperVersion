@@ -42,7 +42,7 @@
 
 #### 下载脚本源码，并配置用户信息
 
-- 回到 **函数代码** 页面，在下方 **终端 **中输入或粘贴以下代码：
+- 回到 **函数代码** 页面，在下方 **终端**中输入或粘贴以下代码：
 
   ```shell
   git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip install -t . -r requirements.txt
