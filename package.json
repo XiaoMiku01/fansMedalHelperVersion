@@ -1,0 +1,20 @@
+{
+  "name": "fans_medal_helper_docs",
+  "version": "0.3.2",
+  "description": "B站粉丝牌助手文档",
+  "main": "index.js",
+  "repository": "https://github.com/XiaoMiku01/fansMedalHelper",
+  "author": "XiaoMiku01",
+  "license": "GPL-3.0 license",
+  "private": false,
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.46"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress-plugin-pixi-live2d-display": "^1.0.1"
+  }
+}
