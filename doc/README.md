@@ -6,7 +6,7 @@
 
 官网：[函数计算 FC (aliyun.com)](https://fcnext.console.aliyun.com/overview)
 
-- 登录后点击右侧 **服务及函数**
+- 登录后点击左侧 **服务及函数**
 
 ​	[<img src="https://s1.ax1x.com/2022/05/27/XnSfZq.md.png" alt="XnSfZq.md.png" style="zoom:80%;" />]()
 
