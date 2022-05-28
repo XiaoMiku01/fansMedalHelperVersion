@@ -1,6 +1,7 @@
-const { defaultTheme } = require('@vuepress/theme-default')
+import { localTheme } from './theme'
+import { defineUserConfig } from '@vuepress/cli'
 
-module.exports = {
+export default defineUserConfig({
     base: '/fansMedalHelperVersion/',
     lang: "zh-CN",
     title: "B站粉丝牌助手文档",
@@ -8,10 +9,9 @@ module.exports = {
     head: [
         [
             'link', { rel: 'icon', href: '/images/logo.jpg' }
-        ],
-        ['script', { src: "https://cdn.jsdelivr.net/gh/XiaoMiku01/fansMedalHelperVersion@master/docs/.vuepress/public/js/live2d.js" }]
+        ]
     ],
-    theme: defaultTheme({
+    theme: localTheme({
         title: "B站粉丝牌助手文档",
         description: "B站粉丝牌助手文档",
         logo: '/images/logo.jpg',
@@ -48,4 +48,4 @@ module.exports = {
         editLinkText: "在 GitHub 上编辑此页",
         contributorsText: '文档贡献者'
     }),
-  }
+  })

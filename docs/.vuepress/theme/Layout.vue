@@ -1,17 +1,10 @@
-// ==UserScript==
-// @name                #相亲相爱一嘉人#
-// @description         在哔站右下角添加嘉然小姐的live2d模型
-// @version             1.0.1
-// @namespace           https://github.com/journey-ad
-// @author              journey-ad
-// @include             /^https:\/\/(www|live|space|t)\.bilibili\.com\/.*$/
-// @icon                https://www.google.com/s2/favicons?domain=bilibili.com
-// @license             GPL v2
-// @run-at              document-end
-// @grant               none
-// ==/UserScript==
+<script setup>
+import ParentLayout from '@vuepress/theme-default/lib/client/layouts/Layout.vue'
+import { onMounted } from 'vue'
 
-(async function () {
+/* eslint-disable */
+
+onMounted(async function () {
     "use strict";
 
     if (inIframe()) {
@@ -438,4 +431,9 @@
             }
         }
     }
-})();
+})
+</script>
+
+<template>
+  <ParentLayout></ParentLayout>
+</template>
