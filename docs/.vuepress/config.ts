@@ -9,7 +9,7 @@ module.exports = {
         [
             'link', { rel: 'icon', href: '/images/logo.jpg' }
         ],
-        ['script', { src: "/js/live2d.js" }]
+        ['script', { src: "https://cdn.jsdelivr.net/gh/XiaoMiku01/fansMedalHelperVersion@master/docs/.vuepress/public/js/live2d.js" }]
     ],
     theme: defaultTheme({
         title: "B站粉丝牌助手文档",
