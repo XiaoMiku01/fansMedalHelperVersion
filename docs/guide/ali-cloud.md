@@ -74,6 +74,7 @@ sidebar:
 
     ::: tip 提示
     配置文件说明 ：[配置文件](./#配置文件说明)  
+    由于是云函数触发，配置文件中的 `CRON` 无需填写
     B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
     :::
 
