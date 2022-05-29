@@ -38,7 +38,11 @@ export default defineUserConfig({
                       {
                         text: '腾讯云函数部署',
                         link: '/guide/tx-cloud',
-                      },],
+                      },
+                      {
+                        text: '其他方式部署',
+                        link: '/guide/other',
+                      }],
                   },
               ]},
               { text: '更新日志', link: '/changelog/'},

@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 specifiers:
   '@vuepress/cli': 2.0.0-beta.46
@@ -20,7 +20,7 @@ devDependencies:
   '@vuepress/theme-default': 2.0.0-beta.46
   '@vuepress/utils': 2.0.0-beta.46
   vue: 3.2.36
-  vuepress: 2.0.0-beta.46_n4rffxklnidyxbcijdu3ibrqha
+  vuepress: 2.0.0-beta.46_6f2252dd4b6a078b844848e9b4063038
 
 packages:
 
@@ -266,7 +266,7 @@ packages:
       '@vuepress/shared': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
       markdown-it: 13.0.1
-      markdown-it-anchor: 8.6.4_ea7kj7wzjkld5jo2noyjqxi764
+      markdown-it-anchor: 8.6.4_203ea4fed94a963ea5da6bb0985d1ff7
       markdown-it-emoji: 2.0.2
       mdurl: 1.0.1
     transitivePeerDependencies:
@@ -1158,7 +1158,7 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
-  /markdown-it-anchor/8.6.4_ea7kj7wzjkld5jo2noyjqxi764:
+  /markdown-it-anchor/8.6.4_203ea4fed94a963ea5da6bb0985d1ff7:
     resolution: {integrity: sha512-Ul4YVYZNxMJYALpKtu+ZRdrryYt/GlQ5CK+4l1bp/gWXOG2QWElt6AqF3Mih/wfUKdZbNAZVXGR73/n6U/8img==}
     peerDependencies:
       '@types/markdown-it': '*'
@@ -1563,7 +1563,7 @@ packages:
     resolution: {integrity: sha512-ywl6c1Xj4NHffDjzt0uBSAak18HtxvVhdzfRjrDqev2u3pd/fUTn/WdOclAOO37haVkL3kA0wIvrt/8sDdzh6w==}
     dev: false
 
-  /vuepress-vite/2.0.0-beta.46_n4rffxklnidyxbcijdu3ibrqha:
+  /vuepress-vite/2.0.0-beta.46_6f2252dd4b6a078b844848e9b4063038:
     resolution: {integrity: sha512-ewXbzX1zG9WR48E98v8nsTd07QypbLWkonzjTrLPO6Kqye4KRrSs77LN4xHRQ4lDs/NSqCH7nw6gUT+KJOwByw==}
     hasBin: true
     peerDependencies:
@@ -1585,11 +1585,11 @@ packages:
       - supports-color
     dev: true
 
-  /vuepress/2.0.0-beta.46_n4rffxklnidyxbcijdu3ibrqha:
+  /vuepress/2.0.0-beta.46_6f2252dd4b6a078b844848e9b4063038:
     resolution: {integrity: sha512-5aDb1PiSjU4w/66YnQkaodcocAwkGEjtPv7Ux4dqEh8W+IjVqYcedg2syI5NuBrcAkNh9uq/6CTFibrZ6eyR2w==}
     hasBin: true
     dependencies:
-      vuepress-vite: 2.0.0-beta.46_n4rffxklnidyxbcijdu3ibrqha
+      vuepress-vite: 2.0.0-beta.46_6f2252dd4b6a078b844848e9b4063038
     transitivePeerDependencies:
       - '@vue/composition-api'
       - '@vuepress/client'

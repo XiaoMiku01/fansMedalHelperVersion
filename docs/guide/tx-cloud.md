@@ -4,14 +4,15 @@ sidebar:
     - /guide/location/
     - /guide/ali-cloud/
     - /guide/tx-cloud/
+    - /guide/other/
 ---
 
 # 腾讯云函数部署（0 基础）
 
 ::: warning 注意
-在首次开通腾讯云SCF功能的**前三个月可以免费使用**，之后每个月收取*12.8元*。
+在首次开通腾讯云 SCF 功能的**前三个月可以免费使用**，之后每个月收取*12.8 元*。
 
-学生认证后，可以申请*3.24元3年*的套餐包。具体规则详见[官方宣传页](https://cloud.tencent.com/act/campus)。
+学生认证后，可以申请*3.24 元 3 年*的套餐包。具体规则详见[官方宣传页](https://cloud.tencent.com/act/campus)。
 :::
 
 ## 创建函数并初始化
@@ -24,23 +25,23 @@ sidebar:
 
 -   选择 **从头开始**，函数类型选择 **事件函数**，函数名称随意，地域保持默认，运行环境选择 **Python 3.7**
 
-​    ![](../images/tx-cloud/img2.png)
+​ ![](../images/tx-cloud/img2.png)
 
 -   函数代码选择 **在线编辑**，其余内容保持默认（后续会修改）
 
-​    ![](../images/tx-cloud/img3.png)
+​ ![](../images/tx-cloud/img3.png)
 
 -   高级配置中，首先勾选执行配置中的 **异步执行**（重要！）
 
-​    ![](../images/tx-cloud/img4.png)
+​ ![](../images/tx-cloud/img4.png)
 
 -   随后向上翻页，将执行超时时间设为 **86400**（重要！）
 
-​    ![](../images/tx-cloud/img5.png)
+​ ![](../images/tx-cloud/img5.png)
 
--   （可选）设置触发器，设置为每日0时执行一次
+-   （可选）设置触发器，设置为每日 0 时执行一次
 
-​    ![](../images/tx-cloud/img6.png)
+​ ![](../images/tx-cloud/img6.png)
 
 全部配置完成后，点击最下方按钮 **完成** 并等待函数创建完毕。
 
@@ -48,7 +49,7 @@ sidebar:
 
 -   函数创建完毕后，切换到 **函数代码** 标签页，将执行方法修改为 `main.run`，将目录下所有内容删除，随后依次点击编辑器中的 **终端** **新终端**
 
-​    ![](../images/tx-cloud/img7.png)
+​ ![](../images/tx-cloud/img7.png)
 
 -   在编辑器下部弹出的 **终端** 中输入或粘贴以下代码并按下 **回车**：
 
@@ -56,13 +57,19 @@ sidebar:
     mkdir src && cd src && git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
     ```
 
+    ::: warning 注意
+    如果出现：
+    fatal: unable to access 'https://github.com/XiaoMiku01/fansMedalHelper.git/': OpenSSL SSL_read: Connection was aborted, errno 10053  
+    说明网络原因拉取失败，请重试几次
+    :::
+
     待终端日志不再更新，则代码与依赖都已导入完毕。
 
 ## 部署与测试
 
 -   进入 `src/users.yaml` 修改用户配置，修改完毕并保存后，点击下方的 **部署**
 
-​    ![](../images/tx-cloud/img8.png)
+​ ![](../images/tx-cloud/img8.png)
 
 ::: tip 提示
 配置文件说明 ：[配置文件](./#配置文件说明)  

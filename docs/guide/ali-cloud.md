@@ -4,6 +4,7 @@ sidebar:
     - /guide/location/
     - /guide/ali-cloud/
     - /guide/tx-cloud/
+    - /guide/other/
 ---
 
 # 阿里云计算(函数)部署（0 基础）
@@ -36,7 +37,7 @@ sidebar:
 ## 配置函数
 
 -   选择 **从零开始创建**，函数名随便，运行环境选择 **Python3.9**, 使用示例代码，**处理事件请求**，请求处理程序填 **main.run**，如图：
-    
+
     ![](https://s1.ax1x.com/2022/05/27/XnPXcD.md.png)
 
 -   配置触发器，类型选择 **定时触发器**，名称随便填，触发方式选择 **指定时间**，指定时间填你想脚本每天开始执行的时间，下面的不用填，点击 **创建**，如图：
@@ -55,11 +56,17 @@ sidebar:
 
 -   回到 **函数代码** 页面，在下方 **终端**中输入或粘贴以下代码：
 
-    ```shell
-    git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
-    ```
+        ```shell
+        git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
+        ```
 
-    ![](https://s1.ax1x.com/2022/05/27/XnEBod.md.png)
+        ![](https://s1.ax1x.com/2022/05/27/XnEBod.md.png)
+
+    ::: warning 注意
+    如果出现：
+    fatal: unable to access 'https://github.com/XiaoMiku01/fansMedalHelper.git/': OpenSSL SSL_read: Connection was aborted, errno 10053  
+    说明网络原因拉取失败，请重试几次
+    :::
 
 -   `回车` 运行完毕后，左边文件往下翻，中找到 `users.yaml` 文件，打开后在里面填写你的配置信息，填写完毕后按 `ctrl`+`s` 保存文件，之后点击右上角 **保存并部署**
 

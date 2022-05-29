@@ -4,6 +4,7 @@ sidebar:
     - /guide/location/
     - /guide/ali-cloud/
     - /guide/tx-cloud/
+    - /guide/other/
 ---
 
 # 本地/服务器部署
