@@ -20,27 +20,27 @@ sidebar:
 
 -   登录后点击左侧 **函数服务**，点击 **新建** 按钮
 
-​    <img src="https://s1.ax1x.com/2022/05/29/XMmzTK.png" alt="image.png" />
+    ![](../images/tx-cloud/img1.png)
 
 -   选择 **从头开始**，函数类型选择 **事件函数**，函数名称随意，地域保持默认，运行环境选择 **Python 3.7**
 
-    <img src="https://s1.ax1x.com/2022/05/29/XMnpFO.png" alt="image.png" />
+​    ![](../images/tx-cloud/img2.png)
 
 -   函数代码选择 **在线编辑**，其余内容保持默认（后续会修改）
 
-    <img src="https://s1.ax1x.com/2022/05/29/XMmxw6.png" alt="image.png" />
+​    ![](../images/tx-cloud/img3.png)
 
 -   高级配置中，首先勾选执行配置中的 **异步执行**（重要！）
 
-​    <img src="https://s1.ax1x.com/2022/05/29/XMn9YD.png" alt="image.png" />
+​    ![](../images/tx-cloud/img4.png)
 
 -   随后向上翻页，将执行超时时间设为 **86400**（重要！）
 
-​    <img src="https://s1.ax1x.com/2022/05/29/XMmvex.png" alt="image.png" />
+​    ![](../images/tx-cloud/img5.png)
 
 -   （可选）设置触发器，设置为每日0时执行一次
 
-​    <img src="https://s1.ax1x.com/2022/05/29/XMnCfe.png" alt="image.png" />
+​    ![](../images/tx-cloud/img6.png)
 
 全部配置完成后，点击最下方按钮 **完成** 并等待函数创建完毕。
 
@@ -48,7 +48,7 @@ sidebar:
 
 -   函数创建完毕后，切换到 **函数代码** 标签页，将执行方法修改为 `main.run`，将目录下所有内容删除，随后依次点击编辑器中的 **终端** **新终端**
 
-    <img src="https://s1.ax1x.com/2022/05/29/XMniSH.png" alt="image.png" />
+​    ![](../images/tx-cloud/img7.png)
 
 -   在编辑器下部弹出的 **终端** 中输入或粘贴以下代码并按下 **回车**：
 
@@ -62,7 +62,7 @@ sidebar:
 
 -   进入 `src/users.yaml` 修改用户配置，修改完毕并保存后，点击下方的 **部署**
 
-    <img src="https://s1.ax1x.com/2022/05/29/XMnFld.png" alt="image.png" />
+​    ![](../images/tx-cloud/img8.png)
 
     ::: tip 提示
     配置文件说明 ：[配置文件](./#配置文件说明)  

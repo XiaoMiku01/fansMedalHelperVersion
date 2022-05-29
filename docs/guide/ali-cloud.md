@@ -19,35 +19,37 @@ sidebar:
 
 -   登录后点击左侧 **服务及函数**
 
-​ [<img src="https://s1.ax1x.com/2022/05/27/XnSfZq.md.png" alt="XnSfZq.md.png" style="zoom:80%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/XnSfZq.md.png)
 
 -   点击 **创建服务**
 
-    [<img src="https://s1.ax1x.com/2022/05/27/XnCiVI.md.png" alt="XnCiVI.md.png" style="zoom: 80%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/XnCiVI.md.png)
 
 -   名称描述随便填，**确定**
 
-    [<img src="https://s1.ax1x.com/2022/05/27/XnC2sH.md.png" alt="XnC2sH.md.png" style="zoom:50%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/XnC2sH.md.png)
 
 -   进入后点击**创建函数**
 
-​ [<img src="https://s1.ax1x.com/2022/05/27/XnPlOH.md.png" alt="XnPlOH.md.png" style="zoom:80%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/XnPlOH.md.png)
 
 ## 配置函数
 
--   选择 **从零开始创建**，函数名随便，运行环境选择 **Python3.9**, 使用示例代码，**处理事件请求**，请求处理程序填 **main.run**，如图：[<img src="https://s1.ax1x.com/2022/05/27/XnPXcD.md.png" alt="XnPXcD.md.png" style="zoom:80%;" />](https://imgtu.com/i/XnPXcD)
+-   选择 **从零开始创建**，函数名随便，运行环境选择 **Python3.9**, 使用示例代码，**处理事件请求**，请求处理程序填 **main.run**，如图：
+    
+    ![](https://s1.ax1x.com/2022/05/27/XnPXcD.md.png)
 
 -   配置触发器，类型选择 **定时触发器**，名称随便填，触发方式选择 **指定时间**，指定时间填你想脚本每天开始执行的时间，下面的不用填，点击 **创建**，如图：
 
-    [<img src="https://s1.ax1x.com/2022/05/27/XnivGV.md.png" alt="XnivGV.md.png" style="zoom:80%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/XnivGV.md.png)
 
 -   进入后先点击 **函数配置**，在 **环境信息** 右边的 **编辑**
 
-​ [<img src="https://s1.ax1x.com/2022/05/27/Xnkght.md.png" alt="Xnkght.md.png" style="zoom:80%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/Xnkght.md.png)
 
 -   **执行超时时间** 就填 86400 秒（24 小时） ，**确定**
 
-[<img src="https://s1.ax1x.com/2022/05/27/XnAF9x.md.png" alt="XnAF9x.md.png" style="zoom:80%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/XnAF9x.md.png)
 
 ## 下载脚本源码，并配置用户信息
 
@@ -57,11 +59,11 @@ sidebar:
     git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
     ```
 
-[![XnEBod.md.png](https://s1.ax1x.com/2022/05/27/XnEBod.md.png)]()
+    ![](https://s1.ax1x.com/2022/05/27/XnEBod.md.png)
 
 -   `回车` 运行完毕后，左边文件往下翻，中找到 `users.yaml` 文件，打开后在里面填写你的配置信息，填写完毕后按 `ctrl`+`s` 保存文件，之后点击右上角 **保存并部署**
 
-    [![XnV7AH.md.png](https://s1.ax1x.com/2022/05/27/XnV7AH.md.png)]()
+    ![](https://s1.ax1x.com/2022/05/27/XnV7AH.md.png)
 
     ::: tip 提示
     配置文件说明 ：[配置文件](./#配置文件说明)  
@@ -72,11 +74,11 @@ sidebar:
 
 -   部署完毕后点击左上角 **测试函数** ，之后点击 **实时日志**
 
-    [<img src="https://s1.ax1x.com/2022/05/27/XnZ2Vg.png" alt="XnZ2Vg.png" style="zoom:67%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/XnZ2Vg.png)
 
 -   之后查看右边日志是否运行正常或者报错，耐心等待运行结束
 
-    [<img src="https://s1.ax1x.com/2022/05/27/Xne9sK.md.png" alt="Xne9sK.md.png" style="zoom:80%;" />]()
+    ![](https://s1.ax1x.com/2022/05/27/Xne9sK.md.png)
 
 ## 完毕
 

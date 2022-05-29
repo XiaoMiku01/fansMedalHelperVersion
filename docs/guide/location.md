@@ -45,4 +45,4 @@ python main.py
 
 ## 效果图
 
-[![XiifQP.md.png](https://s1.ax1x.com/2022/05/24/XiifQP.md.png)](https://imgtu.com/i/XiifQP)
+![](https://s1.ax1x.com/2022/05/24/XiifQP.md.png)
