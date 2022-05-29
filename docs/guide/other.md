@@ -34,7 +34,7 @@ sidebar:
     ![](../images/other/image5.png)
     ::: tip 提示
     配置文件说明 ：[配置文件](./#配置文件说明)  
-    由于是面饭触发，配置文件中的 `CRON` 无需填写
+    由于是面饭触发，配置文件中的 `CRON` 无需填写  
     B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
     :::
 -   保存后新建定时任务，名称随便填，命令填 `task fansMedalHelper/main.py`, 定时规则填每天执行的时间，确定
