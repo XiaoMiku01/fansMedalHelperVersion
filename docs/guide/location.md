@@ -2,7 +2,8 @@
 sidebar:
     - /guide/
     - /guide/location/
-    - /guide/cloud/
+    - /guide/ali-cloud/
+    - /guide/tx-cloud/
 ---
 
 # 本地/服务器部署
