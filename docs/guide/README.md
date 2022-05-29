@@ -2,7 +2,8 @@
 sidebar:
     - /guide/
     - /guide/location/
-    - /guide/cloud/
+    - /guide/ali-cloud/
+    - /guide/tx-cloud/
 ---
 
 # 开始

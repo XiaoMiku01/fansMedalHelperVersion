@@ -2,7 +2,8 @@
 sidebar:
     - /guide/
     - /guide/location/
-    - /guide/cloud/
+    - /guide/ali-cloud/
+    - /guide/tx-cloud/
 ---
 
 # 阿里云计算(函数)部署（0 基础）

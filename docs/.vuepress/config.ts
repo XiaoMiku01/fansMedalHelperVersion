@@ -32,8 +32,12 @@ export default defineUserConfig({
       
                       },
                       {
-                        text: '云函数部署',
-                        link: '/guide/cloud',
+                        text: '阿里云函数部署',
+                        link: '/guide/ali-cloud',
+                      },
+                      {
+                        text: '腾讯云函数部署',
+                        link: '/guide/tx-cloud',
                       },],
                   },
               ]},
