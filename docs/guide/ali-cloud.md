@@ -56,11 +56,11 @@ sidebar:
 
 -   回到 **函数代码** 页面，在下方 **终端**中输入或粘贴以下代码：
 
-        ```shell
-        git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
-        ```
+    ```shell
+    git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
+    ```
 
-        ![](https://s1.ax1x.com/2022/05/27/XnEBod.md.png)
+    ![](https://s1.ax1x.com/2022/05/27/XnEBod.md.png)
 
     ::: warning 注意
     如果出现：
