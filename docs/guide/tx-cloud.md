@@ -64,11 +64,11 @@ sidebar:
 
 ​    ![](../images/tx-cloud/img8.png)
 
-    ::: tip 提示
-    配置文件说明 ：[配置文件](./#配置文件说明)  
-    B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
-    :::
-    
+::: tip 提示
+配置文件说明 ：[配置文件](./#配置文件说明)  
+B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
+:::
+
 -   部署成功后，点击**测试**，在下方控制台可查看日志输出，耐心等待运行完毕即可
 
 ## 完毕
