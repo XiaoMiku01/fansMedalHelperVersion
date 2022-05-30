@@ -47,14 +47,14 @@ sidebar:
 
 ## 导入代码并安装依赖
 
--   函数创建完毕后，切换到 **函数代码** 标签页，将执行方法修改为 `main.run`，将目录下所有内容删除，随后依次点击编辑器中的 **终端** **新终端**
+-   函数创建完毕后，切换到 **函数代码** 标签页，将执行方法修改为 `main.run`，随后依次点击编辑器中的 **终端**，**新终端**
 
 ​ ![](../images/tx-cloud/img7.png)
 
--   在编辑器下部弹出的 **终端** 中输入或粘贴以下代码并按下 **回车**：
+-   在编辑器下部弹出的 **终端** 中，输入或粘贴以下代码并按下 **回车**：
 
     ```shell
-    mkdir src && cd src && git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
+    cd src && git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
     ```
 
     ::: warning 注意
@@ -93,7 +93,7 @@ B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · Xiao
     rm -rf src
     ```
 
-    重新拉取代码：
+    重新创建 `src` 目录并拉取代码：
 
     ```shell
     mkdir src && cd src && git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
