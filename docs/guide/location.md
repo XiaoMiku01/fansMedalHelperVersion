@@ -47,3 +47,11 @@ python main.py
 ## 效果图
 
 ![](../images/location/img1.png)
+
+## 更新方式
+
+进入项目文件夹后，执行 `git pull` 更新代码
+
+```shell
+git pull
+```
