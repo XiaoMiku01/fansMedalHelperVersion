@@ -18,8 +18,8 @@ func main() {
 			return
 		}
 		c.JSON(http.StatusOK, gin.H{
-			"version":   "0.3.2",
-			"changelog": "\n\n自动完成每日观看30分钟任务\n\n高度自定义的用户配置（详细看users.yaml文件）\n\n更加详细的微信推送通知（今日亲密度具体获取情况）\n\n修复BUG",
+			"version":   "0.3.3",
+			"changelog": "适配了更多的推送方式，配置详见文档：https://xiaomiku01.github.io/fansMedalHelperVersion/\n\n 增加弹幕打卡是自动切换到当前房间的粉丝牌，避免出现房间有粉丝牌等级禁言的限制\n\n修复了一些小BUG\n\n",
 			"notice":    "",
 		})
 	})

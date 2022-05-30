@@ -44,9 +44,10 @@ USERS:
 CRON: # 0 0 * * *
 # 这里是 cron 表达式, 第一个参数是分钟, 第二个参数是小时
 # 例如每天凌晨0点0分执行一次为 0 0 * * *
-# 如果不填,则不使用内置定时器,填写正确后要保持该进程一直运行
+# 如果不填,则不使用内置定时器,填写正确后要保持该进程一直运行（linux保持运行方法自行百度）
 
 SENDKEY: # Server酱微信推送 可选 获取地址：https://sct.ftqq.com/
+MOREPUSH: # 更多种类的推送 详细配置见下文
 
 #########以下为自定义配置#########
 
@@ -68,6 +69,29 @@ WATCHINGLIVE: 1 # 是否完成每日三十分钟看直播任务，默认开启�
 
 ::: warning 警告
 请务必严格填写，否则程序将读取失败，可以在这里 [YAML、YML 在线编辑器(格式化校验)-BeJSON.com](https://www.bejson.com/validators/yaml_editor/) 验证你填的 yaml 是否正确
+:::
+
+## 多种推送方式配置 MOREPUSH 参数
+
+| 推送方式               | 参数                                                                                                               | 官网                                                                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| bark                   | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}}                                                     | [Bark - Customed Notifications on the App Store (apple.com)](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865) |
+| dingtalk 钉钉机器人    | {"notifier":"dingtalk","params":{"markdown":True,"token":"xxxxxx"}}                                                | [钉钉开放文档 (dingtalk.com)](https://open.dingtalk.com/document/group/custom-robot-access)                                          |
+| discord                | {"notifier":"discord","params":{"markdown":True,"webhook":"https://discord.com/api/webhooks/xxxxxx"}}              | [Intro to Webhooks – Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)                             |
+| pushplus               | {"notifier":"pushplus","params":{"markdown":True,"token":"xxxxxx"}}                                                | [pushplus(推送加)-微信消息推送平台](https://www.pushplus.plus/)                                                                      |
+| qmsg                   | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}}                                                     | [Qmsg 酱-您的专属 QQ 消息推送服务小姐姐-qmsg.zendee.cn](https://qmsg.zendee.cn/)                                                     |
+| telegram               | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}}                             | [Bots: An introduction for developers (telegram.org)](https://core.telegram.org/bots)                                                |
+| wechatworkapp 企业微信 | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} | [发送应用消息 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/90236)                    |
+| wechatworkbot 企业微信 | {"notifier":"wechatworkbot","params":{"markdown":True,"key":"xxxxxx"}}                                             | [群机器人配置说明 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/91770)                |
+
+::: tip 例如
+
+我想用 `pushplus` 推送消息，在官方申请到的 `token` 为： `abcabcacb` ，配置文件中的 `MOREPUSH` 就如下填写
+
+```yaml
+MOREPUSH: { "notifier": "pushplus", "params": { "markdown": True, "token": "abcabcacb" } }
+```
+
 :::
 
 ## 已知问题
