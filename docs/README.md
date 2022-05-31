@@ -20,6 +20,6 @@ features:
     - title: 支持多种定时运行方式
       details: 可以使用内置的定时模块运行，也可以使用其他外部的定时软件，如：windows计划任务，linux宝塔。
     - title: 支持信息推送服务
-      details: 内置Server酱推送服务。
+      details: 内置Server酱和多种信息推送服务。
 footer: GPL-3.0 Licensed | Copyright © 2022-present XiaoMiku01
 ---
