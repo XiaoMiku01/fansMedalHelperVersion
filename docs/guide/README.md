@@ -9,7 +9,7 @@ sidebar:
 
 # 开始
 
-当前版本：0.3.3  
+当前版本：0.3.4  
 反馈交流群：979245756
 
 ## 目前已实现功能
@@ -66,7 +66,6 @@ WEARMEDAL: 1 # 是否弹幕打卡时自动带上当前房间的粉丝牌，避�
 # 本项目中的异步执行指的是：同时点赞或者分享所有直播间，速度非常快，但缺点就是可能会被B站吞掉亲密度，所以建议粉丝牌较少的用户开启异步执行
 # 粉丝牌数大于30的用户建议使用同步，会更加稳定。缺点就是速度比较慢，但是可以设置点赞和分享的CD时间，避免被B站吞掉亲密度
 # 多用户之间依然是异步，不受配置影响
-
 ```
 
 ::: warning 警告
@@ -75,24 +74,24 @@ WEARMEDAL: 1 # 是否弹幕打卡时自动带上当前房间的粉丝牌，避�
 
 ## 多种推送方式配置 MOREPUSH 参数 （可选）
 
-| 推送方式               | 参数                                                         | 官网                                                         |
-| ---------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| bark                   | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}} | [Bark - Customed Notifications on the App Store (apple.com)](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865) |
-| dingtalk 钉钉机器人    | {"notifier":"dingtalk","params":{"markdown":True,"token":"xxxxxx"}} | [钉钉开放文档 (dingtalk.com)](https://open.dingtalk.com/document/group/custom-robot-access) |
-| discord                | {"notifier":"discord","params":{"markdown":True,"webhook":"https://discord.com/api/webhooks/xxxxxx"}} | [Intro to Webhooks – Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) |
-| pushplus               | {"notifier":"pushplus","params":{"markdown":True,"token":"xxxxxx"}} | [pushplus(推送加)-微信消息推送平台](https://www.pushplus.plus/) |
-| qmsg                   | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}} | [Qmsg 酱-您的专属 QQ 消息推送服务小姐姐-qmsg.zendee.cn](https://qmsg.zendee.cn/) |
-| telegram               | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}} | [Bots: An introduction for developers (telegram.org)](https://core.telegram.org/bots) |
-| wechatworkapp 企业微信 | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} | [发送应用消息 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/90236) |
-| wechatworkbot 企业微信 | {"notifier":"wechatworkbot","params":{"markdown":True,"key":"xxxxxx"}} | [群机器人配置说明 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/91770) |
-| lark 飞书              | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}} | [自定义机器人指南 - 客户端文档 - 开发文档 - 飞书开放平台 (feishu.cn)](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) |
+| 推送方式               | 参数                                                                                                               | 官网                                                                                                                                     |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| bark                   | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}}                                                     | [Bark - Customed Notifications on the App Store (apple.com)](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865)     |
+| dingtalk 钉钉机器人    | {"notifier":"dingtalk","params":{"markdown":True,"token":"xxxxxx"}}                                                | [钉钉开放文档 (dingtalk.com)](https://open.dingtalk.com/document/group/custom-robot-access)                                              |
+| discord                | {"notifier":"discord","params":{"markdown":True,"webhook":"https://discord.com/api/webhooks/xxxxxx"}}              | [Intro to Webhooks – Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)                                 |
+| pushplus               | {"notifier":"pushplus","params":{"markdown":True,"token":"xxxxxx"}}                                                | [pushplus(推送加)-微信消息推送平台](https://www.pushplus.plus/)                                                                          |
+| qmsg                   | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}}                                                     | [Qmsg 酱-您的专属 QQ 消息推送服务小姐姐-qmsg.zendee.cn](https://qmsg.zendee.cn/)                                                         |
+| telegram               | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}}                             | [Bots: An introduction for developers (telegram.org)](https://core.telegram.org/bots)                                                    |
+| wechatworkapp 企业微信 | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} | [发送应用消息 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/90236)                        |
+| wechatworkbot 企业微信 | {"notifier":"wechatworkbot","params":{"markdown":True,"key":"xxxxxx"}}                                             | [群机器人配置说明 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/91770)                    |
+| lark 飞书              | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}}                                   | [自定义机器人指南 - 客户端文档 - 开发文档 - 飞书开放平台 (feishu.cn)](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) |
 
 ::: tip 例如
 
 我想用 `pushplus` 推送消息，在官方申请到的 `token` 为： `abcabcacb` ，配置文件中的 `MOREPUSH` 就如下填写
 
 ```yaml
-MOREPUSH: { "notifier": "pushplus", "params": { "markdown": True, "token": "abcabcacb" } }
+MOREPUSH: { "notifier": "pushplus", "params": { "markdown": False, "token": "abcabcacb" } }
 ```
 
 :::
@@ -101,8 +100,7 @@ MOREPUSH: { "notifier": "pushplus", "params": { "markdown": True, "token": "abca
 
 > 异步执行时可能会出现个别直播间的亲密度丢失，出现 1200 或 1100 的情况
 
-解决方法：换成同步执行，但是速度会变慢
-
+解决方法：换成同步执行，但是速度会变慢, 如果还是被吞，那我也没办法了
 
 ## 赞助
 

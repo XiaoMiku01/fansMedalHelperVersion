@@ -1,5 +1,15 @@
 # 更新日志
 
+## 0.3.4
+
+2022-6-1
+
+-   修复了获取粉丝牌失败导致的异常 BUG [#36](https://github.com/XiaoMiku01/fansMedalHelper/issues/36)
+
+-   增加了飞书机器人推送方式 [#33](https://github.com/XiaoMiku01/fansMedalHelper/issues/33)
+
+-   增加了 Docker [#9](https://github.com/XiaoMiku01/fansMedalHelper/issues/9) 和 青龙面板 [#1](https://github.com/XiaoMiku01/fansMedalHelper/issues/1) 部署方式
+
 ## 0.3.3
 
 2022-5-30
