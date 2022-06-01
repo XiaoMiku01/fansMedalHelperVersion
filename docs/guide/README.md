@@ -74,17 +74,17 @@ WEARMEDAL: 1 # 是否弹幕打卡时自动带上当前房间的粉丝牌，避�
 
 ## 多种推送方式配置 MOREPUSH 参数 （可选）
 
-| 推送方式               | 参数                                                                                                               | 官网                                                                                                                                     |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| bark                   | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}}                                                     | [Bark - Customed Notifications on the App Store (apple.com)](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865)     |
-| dingtalk 钉钉机器人    | {"notifier":"dingtalk","params":{"markdown":True,"token":"xxxxxx"}}                                                | [钉钉开放文档 (dingtalk.com)](https://open.dingtalk.com/document/group/custom-robot-access)                                              |
-| discord                | {"notifier":"discord","params":{"markdown":True,"webhook":"https://discord.com/api/webhooks/xxxxxx"}}              | [Intro to Webhooks – Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)                                 |
-| pushplus               | {"notifier":"pushplus","params":{"markdown":True,"token":"xxxxxx"}}                                                | [pushplus(推送加)-微信消息推送平台](https://www.pushplus.plus/)                                                                          |
-| qmsg                   | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}}                                                     | [Qmsg 酱-您的专属 QQ 消息推送服务小姐姐-qmsg.zendee.cn](https://qmsg.zendee.cn/)                                                         |
-| telegram               | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}}                             | [Bots: An introduction for developers (telegram.org)](https://core.telegram.org/bots)                                                    |
-| wechatworkapp 企业微信 | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} | [发送应用消息 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/90236)                        |
-| wechatworkbot 企业微信 | {"notifier":"wechatworkbot","params":{"markdown":True,"key":"xxxxxx"}}                                             | [群机器人配置说明 - 接口文档 - 企业微信开发者中心 (qq.com)](https://developer.work.weixin.qq.com/document/path/91770)                    |
-| lark 飞书              | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}}                                   | [自定义机器人指南 - 客户端文档 - 开发文档 - 飞书开放平台 (feishu.cn)](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) |
+| 推送方式                                                     | 参数                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [bark](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865) | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}} |
+| [dingtalk](https://open.dingtalk.com/document/group/custom-robot-access)  钉钉机器人 | {"notifier":"dingtalk","params":{"markdown":False,"token":"xxxxxx"}} |
+| [discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) | {"notifier":"discord","params":{"markdown":False,"webhook":"https://discord.com/api/webhooks/xxxxxx"}} |
+| [pushplus](https://www.pushplus.plus/)                       | {"notifier":"pushplus","params":{"markdown":False,"token":"xxxxxx"}} |
+| [qmsg](https://qmsg.zendee.cn/)                              | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}} |
+| [telegram](https://core.telegram.org/bots)                   | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}} |
+| [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236)  企业微信 | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
+| [wechatworkbot ](https://developer.work.weixin.qq.com/document/path/91770) 企业微信 | {"notifier":"wechatworkbot","params":{"markdown":False,"key":"xxxxxx"}} |
+| [lark](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)  飞书 | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}} |
 
 ::: tip 例如
 
@@ -93,6 +93,8 @@ WEARMEDAL: 1 # 是否弹幕打卡时自动带上当前房间的粉丝牌，避�
 ```yaml
 MOREPUSH: { "notifier": "pushplus", "params": { "markdown": False, "token": "abcabcacb" } }
 ```
+
+`markdown` 建议都设为 False。因为可能会出现推送格式异常
 
 :::
 
