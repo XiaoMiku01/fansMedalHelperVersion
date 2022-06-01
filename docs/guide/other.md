@@ -57,4 +57,48 @@ sidebar:
 
 ## Docker 部署
 
-待更新
+-   填写配置文件 [配置文件](./#配置文件说明-users-yaml)
+
+-   填写完成后将 yaml 格式文件转换成 json 格式，网址为：[yaml-to-json](https://www.convertjson.com/yaml-to-json.htm)
+    ![](../images/other/image7.png)
+    ::: warning 注意
+    Docker 部署时需要填写 CRON，否则只会执行一次  
+    还需勾选右边的 `Minimize JSON` 压缩 JSON
+    :::
+
+-   拉取镜像
+
+    ```shell
+    docker pull xiaomiku01/fansMedalHelper:latest
+    ```
+
+-   创建运行容器
+
+    ```shell
+    docker run -d -e USERS='<这里填写刚刚转换的json格式字符串>' --name fansmedalhelper xiaomiku01/fansmedalhelper:latest
+    ```
+
+    ::: warning 警告
+    json 字符串必须用单引号括起来，否则肯识别失败
+    例如：
+
+    ```shell
+    docker run -d -e USERS='{"users": [{"user_id": "123456789", "access_key": "123456789", "secret_key": "123456789"}]}' --name fansmedalhelper xiaomiku01/fansmedalhelper:latest
+    ```
+
+    :::
+
+-   查看运行日志
+
+    ```shell
+    docker logs fansmedalhelper
+    ```
+
+-   如何更新
+    :::tip 提示
+    每次容器启动后都会自动拉取最新代码，所有只需要停止当前容器，重新运行即可
+    :::
+    ```shell
+    docker stop fansmedalhelper
+    docker run -d -e USERS='<这里填写刚刚转换的json格式字符串>' --name fansmedalhelper xiaomiku01/fansmedalhelper:latest
+    ```
