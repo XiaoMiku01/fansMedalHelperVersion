@@ -96,6 +96,10 @@ sidebar:
 
 -   回到 **函数代码** 页面，在下方 **终端**中输入或粘贴以下代码, 注意！更新前保存一下之前的`users.yaml`的文件内容，因为更新会重置：
     ```shell
-    cd fansMedalHelper/ && git pull && cp -r * .. && cd ..
+    cd fansMedalHelper
+    ```
+    ```shell
+    git pull && cp -r * .. && cd ..
     ```
     回车确定后, 重新配置`users.yaml`文件 保存部署即可
+    如果提示 fatal 重复执行第二步
