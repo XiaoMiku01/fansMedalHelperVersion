@@ -95,8 +95,6 @@ B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · Xiao
     cd src/fansMedalHelper/ 
     ```
 
-    重新创建 `src` 目录并拉取代码：
-
     ```shell
     git pull && /bin/cp -r  * ..
     ```
