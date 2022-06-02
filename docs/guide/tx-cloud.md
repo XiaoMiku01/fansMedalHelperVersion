@@ -54,13 +54,17 @@ sidebar:
 -   在编辑器下部弹出的 **终端** 中，输入或粘贴以下代码并按下 **回车**：
 
     ```shell
-    cd src && git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
+    rm -rf src/index.py  &&  cd src
+    ```
+
+    ```shell
+    git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && python3 -m pip install --upgrade pip && pip3 install -t . -r requirements.txt
     ```
 
     ::: warning 注意
     如果出现：
     fatal: unable to access 'https://github.com/XiaoMiku01/fansMedalHelper.git/': OpenSSL SSL_read: Connection was aborted, errno 10053  
-    说明网络原因拉取失败，请重试几次
+    说明网络原因拉取失败，请重试第二步几次
     :::
 
     待终端日志不再更新，则代码与依赖都已导入完毕。
@@ -87,16 +91,14 @@ B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · Xiao
 
 -   回到 **函数代码** 页面，在下方 **终端**中输入或粘贴以下代码, 注意！更新前保存一下之前的`users.yaml`的文件内容：
 
-    移除 `src` 目录：
-
     ```shell
-    rm -rf src
+    cd src/fansMedalHelper/ 
     ```
 
     重新创建 `src` 目录并拉取代码：
 
     ```shell
-    mkdir src && cd src && git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
+    git pull && /bin/cp -r  * ..
     ```
 
-    回车确定后, 重新配置`users.yaml`文件 保存部署即可
+    回车确定后, 重新配置`users.yaml`文件 保存部署即可 第二步出现 `fatal: unable to access` 重复第二步就多试几次
