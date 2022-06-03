@@ -62,6 +62,8 @@ DANMAKU_CD: 6 # 弹幕间隔时间,单位秒,默认6秒,设置为0则不发弹�
 WATCHINGLIVE: 1 # 是否完成每日三十分钟看直播任务，默认开启，设置为0则关闭
 
 WEARMEDAL: 1 # 是否弹幕打卡时自动带上当前房间的粉丝牌，避免房间有粉丝牌等级禁言，默认开启，设置为0则关闭
+
+SGININGROUP: 2 # 应援团签到CD时间,单位秒,默认2秒,设置为0则不签到
 # 说明：
 # 本项目中的异步执行指的是：同时点赞或者分享所有直播间，速度非常快，但缺点就是可能会被B站吞掉亲密度，所以建议粉丝牌较少的用户开启异步执行
 # 粉丝牌数大于30的用户建议使用同步，会更加稳定。缺点就是速度比较慢，但是可以设置点赞和分享的CD时间，避免被B站吞掉亲密度
@@ -74,17 +76,17 @@ WEARMEDAL: 1 # 是否弹幕打卡时自动带上当前房间的粉丝牌，避�
 
 ## 多种推送方式配置 MOREPUSH 参数 （可选）
 
-| 推送方式                                                     | 参数                                                         |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [bark](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865) | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}} |
-| [dingtalk](https://open.dingtalk.com/document/group/custom-robot-access)  钉钉机器人 | {"notifier":"dingtalk","params":{"markdown":False,"token":"xxxxxx"}} |
-| [discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) | {"notifier":"discord","params":{"markdown":False,"webhook":"https://discord.com/api/webhooks/xxxxxx"}} |
-| [pushplus](https://www.pushplus.plus/)                       | {"notifier":"pushplus","params":{"markdown":False,"token":"xxxxxx"}} |
-| [qmsg](https://qmsg.zendee.cn/)                              | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}} |
-| [telegram](https://core.telegram.org/bots)                   | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}} |
-| [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236)  企业微信 | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
-| [wechatworkbot ](https://developer.work.weixin.qq.com/document/path/91770) 企业微信 | {"notifier":"wechatworkbot","params":{"markdown":False,"key":"xxxxxx"}} |
-| [lark](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN)  飞书 | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}} |
+| 推送方式                                                                             | 参数                                                                                                               |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| [bark](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865)       | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}}                                                     |
+| [dingtalk](https://open.dingtalk.com/document/group/custom-robot-access) 钉钉机器人  | {"notifier":"dingtalk","params":{"markdown":False,"token":"xxxxxx"}}                                               |
+| [discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) | {"notifier":"discord","params":{"markdown":False,"webhook":"https://discord.com/api/webhooks/xxxxxx"}}             |
+| [pushplus](https://www.pushplus.plus/)                                               | {"notifier":"pushplus","params":{"markdown":False,"token":"xxxxxx"}}                                               |
+| [qmsg](https://qmsg.zendee.cn/)                                                      | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}}                                                     |
+| [telegram](https://core.telegram.org/bots)                                           | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}}                             |
+| [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236) 企业微信   | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
+| [wechatworkbot ](https://developer.work.weixin.qq.com/document/path/91770) 企业微信  | {"notifier":"wechatworkbot","params":{"markdown":False,"key":"xxxxxx"}}                                            |
+| [lark](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) 飞书       | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}}                                   |
 
 ::: tip 例如
 
