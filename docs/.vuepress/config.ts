@@ -46,6 +46,7 @@ export default defineUserConfig({
                   },
               ]},
               { text: '更新日志', link: '/changelog/'},
+              { text: '小工具', link: '/tools/'},
         ],
         repo: 'XiaoMiku01/fansMedalHelper',
         docsRepo: 'https://github.com/XiaoMiku01/fansMedalHelperVersion',
