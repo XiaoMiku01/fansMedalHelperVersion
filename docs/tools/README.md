@@ -46,12 +46,14 @@ sidebar: false
         let result = document.getElementById("result");
         const calc = () => {
             let allExp = Number(-exp.value);
-            for (let i = level.value; i < targetLevel.value; i++) {
+            for (let i = Number(level.value); i < Number(targetLevel.value); i++) {
                 allExp += leveMap[i];
                 console.log(allExp);
             }
             allExp += Number(targetExp.value);
-            result.innerHTML = `需要：${allExp} 亲密度 \n 预计：${Math.ceil(allExp / 1300)} 天`;
+            result.innerHTML = `需要：${allExp} 亲密度 \n 预计：${Math.ceil(
+                allExp / 1300
+            )} 天 (每天1300)`;
         };
     </script>
 </div>
