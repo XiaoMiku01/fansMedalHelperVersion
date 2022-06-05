@@ -8,7 +8,7 @@ onMounted(async function () {
   "use strict"
 
   if (inIframe()) {
-    console.log("iframe中不加载")
+    // console.log("iframe中不加载")
     return false
   }
 
@@ -121,7 +121,7 @@ onMounted(async function () {
 
     加载圣·嘉然()
 
-    console.log("all done.")
+    // console.log("all done.")
   })
 
   // 初始化设定
@@ -401,7 +401,7 @@ onMounted(async function () {
           // console.log(this.readyState); // uncomment this line to see which ready states are called.
           if (!r && (!this.readyState || this.readyState == "complete")) {
             r = true
-            console.log(src)
+            // console.log(src)
             resolve()
           }
         }
