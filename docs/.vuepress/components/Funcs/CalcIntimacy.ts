@@ -1,3 +1,16 @@
+interface CalcArgumentsType {
+    Level: number;
+    Exp: number;
+    tLevel: number;
+    tExp: number;
+    DAILY: number;
+}
+interface CalcResultType {
+    DAILY: number;
+    total: number;
+    days: number;
+    target: string;
+}
 const leveMap = {
     1: 201,
     2: 300,
@@ -20,7 +33,7 @@ const leveMap = {
     19: 500000,
     20: Infinity,
 };
-function CalcIntimacy(Level: number, Exp: number, tLevel: number, tExp: number, DAILY: number) {
+function CalcIntimacy({ Level, Exp, tLevel, tExp, DAILY }: CalcArgumentsType): CalcResultType {
     let allExp = -Exp;
     let days = 0;
     for (let i = Level; i < tLevel; i++) {
