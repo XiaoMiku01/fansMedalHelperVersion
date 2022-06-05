@@ -22,15 +22,35 @@ const leveMap = {
 }
 function CalcIntimacy(Level: number, Exp: number, tLevel: number, tExp: number) {
   let allExp = -Exp
+  let days = 0
   for (let i = Level; i < tLevel; i++) {
     allExp += leveMap[i]
   }
   allExp += tExp
+  days = Math.ceil(allExp / DAILY)
   return {
+    DAILY: DAILY,
     total: allExp,
-    days: Math.ceil(allExp / DAILY),
-    DAILY: DAILY
+    days: days,
+    target: getAfterDateByDay(getCurrentDate(10), days, 10)
   }
+}
+function getCurrentDate(length = 19) {
+  let date = new Date()
+  return `${date.toLocaleDateString()}&${date.toTimeString().slice(0, 8)}`
+    .replace(/(\d{4})\/(\d{1,})\/(\d{1,})&/, (all, s1, s2, s3) => {
+      return `${s1}-${("0" + s2).slice(-2)}-${("0" + s3).slice(-2)} `
+    })
+    .slice(0, length)
+}
+function getAfterDateByDay(d, n, length) {
+  let drr = d.split("-")
+  let date = new Date(drr[0], Number(drr[1]) - 1, Number(drr[2]) + n)
+  return `${date.toLocaleDateString()}&${date.toTimeString().slice(0, 8)}`
+    .replace(/(\d{4})\/(\d{1,})\/(\d{1,})&/, (all, s1, s2, s3) => {
+      return `${s1}-${("0" + s2).slice(-2)}-${("0" + s3).slice(-2)} `
+    })
+    .slice(0, length)
 }
 
 export default CalcIntimacy

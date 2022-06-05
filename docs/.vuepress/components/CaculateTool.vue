@@ -31,6 +31,8 @@
       <el-tag type="success">{{ result.total }}</el-tag>
       <span>剩余天数: </span>
       <el-tag type="success">{{ result.days }}</el-tag>
+      <span>目标日期: </span>
+      <el-tag type="success">{{ result.target }}</el-tag>
     </el-row>
   </el-form>
 </template>
@@ -65,7 +67,7 @@ export default defineComponent({
       tLevel: 20,
       tExp: 0
     })
-    let result = reactive({ DAILY: 1300, total: 0, days: 0 })
+    let result = reactive({ DAILY: 1300, total: 0, days: 0, target: "" })
     onBeforeMount(() => {
       onDataChange(FormData) // 初始化
     })
@@ -79,9 +81,10 @@ export default defineComponent({
           type: "warning"
         })
       } else {
-        result.total = CalcIntimacy(obj.Level, obj.Exp, obj.tLevel, obj.tExp).total
-        result.days = CalcIntimacy(obj.Level, obj.Exp, obj.tLevel, obj.tExp).days
-        result.DAILY = CalcIntimacy(obj.Level, obj.Exp, obj.tLevel, obj.tExp).DAILY
+        const r = CalcIntimacy(obj.Level, obj.Exp, obj.tLevel, obj.tExp)
+        for (let key of Object.keys(r)) {
+          result[key] = r[key]
+        }
       }
     }
     function valueValidCheck(obj) {
