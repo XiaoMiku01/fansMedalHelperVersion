@@ -1,5 +1,7 @@
 import { localTheme } from "./theme"
 import { defineUserConfig } from "@vuepress/cli"
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components"
+import { path } from "@vuepress/utils"
 
 export default defineUserConfig({
   base: "/fansMedalHelperVersion/",
@@ -56,5 +58,10 @@ export default defineUserConfig({
     editLink: true,
     editLinkText: "在 GitHub 上编辑此页",
     contributorsText: "文档贡献者"
-  })
+  }),
+  plugins: [
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, "./components")
+    })
+  ]
 })
