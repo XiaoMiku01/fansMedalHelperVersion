@@ -3,24 +3,24 @@
     <el-row>
       <el-col :span="12">
         <el-form-item label="当前等级" prop="Level" required>
-          <el-input v-model="FormData.Level" type="number" :step="1" />
+          <el-input v-model="FormData.Level" type="text" clearable />
         </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item label="当前亲密度" prop="Exp">
-          <el-input v-model="FormData.Exp" type="number" />
+          <el-input v-model="FormData.Exp" type="text" clearable />
         </el-form-item>
       </el-col>
     </el-row>
     <el-row>
       <el-col :span="12">
         <el-form-item label="目标等级" prop="tLevel" required>
-          <el-input v-model="FormData.tLevel" type="number" :step="1" />
+          <el-input v-model="FormData.tLevel" type="text" clearable />
         </el-form-item>
       </el-col>
       <el-col :span="12">
         <el-form-item label="目标亲密度" prop="tExp">
-          <el-input v-model="FormData.tExp" type="number" />
+          <el-input v-model="FormData.tExp" type="text" clearable />
         </el-form-item>
       </el-col>
     </el-row>
@@ -65,12 +65,12 @@ export default defineComponent({
       tLevel: 20,
       tExp: 0
     })
-    let result = reactive({ total: 0, days: 0, DAILY: 1300 })
+    let result = reactive({ DAILY: 1300, total: 0, days: 0 })
     onBeforeMount(() => {
       onDataChange(FormData) // 初始化
     })
-    watch(FormData, (data) => {
-      onDataChange(data)
+    watch(FormData, (FormData) => {
+      onDataChange(FormData)
     })
     function onDataChange(obj) {
       if (!valueValidCheck(obj)) {
@@ -85,13 +85,7 @@ export default defineComponent({
       }
     }
     function valueValidCheck(obj) {
-      const flag = obj.Level >= 1 && obj.Level <= 20 && obj.tLevel >= 1 && obj.tLevel <= 20
-      if (flag) {
-        // nothing to do.
-        return true
-      } else {
-        return false
-      }
+      return obj.Level >= 1 && obj.Level <= 20 && obj.tLevel >= 1 && obj.tLevel <= 20
     }
     return {
       FormData,
