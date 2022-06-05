@@ -44,7 +44,7 @@
 <script lang="ts">
 import { defineComponent, reactive, onBeforeMount, watch } from "vue";
 import { ElRow, ElCol, ElForm, ElFormItem, ElInput, ElTag, ElMessage } from "element-plus";
-import CalcIntimacy from "./Funcs/CalcIntimacy";
+import { leveMap, CalcIntimacy } from "./Funcs/CalcIntimacy";
 import "element-plus/theme-chalk/base.css";
 import "element-plus/theme-chalk/el-row.css";
 import "element-plus/theme-chalk/el-col.css";
@@ -92,7 +92,14 @@ export default defineComponent({
             }
         }
         function valueValidCheck(obj) {
-            return obj.Level >= 1 && obj.Level <= 20 && obj.tLevel >= 1 && obj.tLevel <= 20;
+            return (
+                obj.Level >= 1 &&
+                obj.Level <= 20 &&
+                obj.tLevel >= 1 &&
+                obj.tLevel <= 20 &&
+                obj.Exp <= leveMap[obj.Level] &&
+                obj.tExp <= leveMap[obj.tLevel]
+            );
         }
         return {
             FormData,
