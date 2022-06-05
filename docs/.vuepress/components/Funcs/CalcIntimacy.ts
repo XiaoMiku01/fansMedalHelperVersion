@@ -1,4 +1,3 @@
-const DAILY = 1300;
 const leveMap = {
     1: 201,
     2: 300,
@@ -21,7 +20,7 @@ const leveMap = {
     19: 500000,
     20: Infinity,
 };
-function CalcIntimacy(Level: number, Exp: number, tLevel: number, tExp: number) {
+function CalcIntimacy(Level: number, Exp: number, tLevel: number, tExp: number, DAILY: number) {
     let allExp = -Exp;
     let days = 0;
     for (let i = Level; i < tLevel; i++) {
