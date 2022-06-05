@@ -3,31 +3,31 @@
         <el-row>
             <el-col :span="12">
                 <el-form-item label="当前等级" prop="Level" required>
-                    <el-input v-model="FormData.Level" type="text" clearable />
+                    <el-input v-model.number="FormData.Level" type="text" clearable />
                 </el-form-item>
             </el-col>
             <el-col :span="12">
                 <el-form-item label="当前亲密度" prop="Exp">
-                    <el-input v-model="FormData.Exp" type="text" clearable />
+                    <el-input v-model.number="FormData.Exp" type="text" clearable />
                 </el-form-item>
             </el-col>
         </el-row>
         <el-row>
             <el-col :span="12">
                 <el-form-item label="目标等级" prop="tLevel" required>
-                    <el-input v-model="FormData.tLevel" type="text" clearable />
+                    <el-input v-model.number="FormData.tLevel" type="text" clearable />
                 </el-form-item>
             </el-col>
             <el-col :span="12">
                 <el-form-item label="目标亲密度" prop="tExp">
-                    <el-input v-model="FormData.tExp" type="text" clearable />
+                    <el-input v-model.number="FormData.tExp" type="text" clearable />
                 </el-form-item>
             </el-col>
         </el-row>
         <el-row>
             <el-col :span="12">
                 <el-form-item label="每日获取" prop="DAILY" required>
-                    <el-input v-model="FormData.DAILY" type="text" clearable />
+                    <el-input v-model.number="FormData.DAILY" type="text" clearable />
                 </el-form-item>
             </el-col>
             <el-col :span="12">
@@ -96,7 +96,7 @@ export default defineComponent({
             DAILY: 1300,
         };
         const FormData = reactive({ ...defaultFormData });
-        let result = reactive({ DAILY: 1300, total: 0, days: 0, target: "" });
+        let result = reactive({ DAILY: defaultFormData.DAILY, total: 0, days: 0, target: "" });
         onBeforeMount(() => {
             onDataChange(FormData); // 初始化
         });
@@ -125,7 +125,8 @@ export default defineComponent({
                 obj.Exp <= leveMap[obj.Level] &&
                 obj.tExp <= leveMap[obj.tLevel] &&
                 obj.DAILY >= 1 &&
-                obj.DAILY <= 1500
+                obj.DAILY <= 1500 &&
+                obj.Level <= obj.tLevel
             );
         }
         function restoreInitValue() {
