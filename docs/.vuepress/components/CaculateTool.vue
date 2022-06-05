@@ -37,24 +37,24 @@
             </el-col>
         </el-row>
         <el-row class="description">
-            <div>
+            <el-row>
                 <span>如每日获取</span>
-                <el-tag type="success">{{ result.DAILY }}</el-tag>
+                <el-tag type="success">{{ Result.DAILY }}</el-tag>
                 <span>还需要亲密度: </span>
-                <el-tag type="success">{{ result.total }}</el-tag>
+                <el-tag type="success">{{ Result.total }}</el-tag>
                 <span>剩余天数: </span>
-                <el-tag type="success">{{ result.days }}</el-tag>
-            </div>
-            <div>
+                <el-tag type="success">{{ Result.days }}</el-tag>
+            </el-row>
+            <el-row>
                 <span>目标日期: </span>
-                <el-tag type="success">{{ result.target }}</el-tag>
-            </div>
+                <el-tag type="success">{{ Result.target }}</el-tag>
+            </el-row>
         </el-row>
     </el-form>
 </template>
 
-<script lang="ts">
-import { defineComponent, reactive, onBeforeMount, watch } from "vue";
+<script setup lang="ts">
+import { reactive, watchEffect } from "vue";
 import {
     ElRow,
     ElCol,
@@ -65,93 +65,66 @@ import {
     ElMessage,
     ElButton,
 } from "element-plus";
+import ImportElementStyle from "./Funcs/ImportElementStyle";
 import { leveMap, CalcIntimacy } from "./Funcs/CalcIntimacy";
-import "element-plus/theme-chalk/base.css";
-import "element-plus/theme-chalk/el-row.css";
-import "element-plus/theme-chalk/el-col.css";
-import "element-plus/theme-chalk/el-form.css";
-import "element-plus/theme-chalk/el-form-item.css";
-import "element-plus/theme-chalk/el-input.css";
-import "element-plus/theme-chalk/el-tag.css";
-import "element-plus/theme-chalk/el-message.css";
-import "element-plus/theme-chalk/el-button.css";
 
-export default defineComponent({
-    components: {
-        ElRow,
-        ElCol,
-        ElForm,
-        ElFormItem,
-        ElInput,
-        ElTag,
-        ElMessage,
-        ElButton,
-    },
-    setup() {
-        const defaultFormData = {
-            Level: 1,
-            Exp: 0,
-            tLevel: 20,
-            tExp: 0,
-            DAILY: 1300,
-        };
-        const FormData = reactive({ ...defaultFormData });
-        let result = reactive({ DAILY: defaultFormData.DAILY, total: 0, days: 0, target: "" });
-        onBeforeMount(() => {
-            onDataChange(FormData); // 初始化
+const DefaultFormData = {
+    Level: 1,
+    Exp: 0,
+    tLevel: 20,
+    tExp: 0,
+    DAILY: 1300,
+};
+const FormData = reactive({ ...DefaultFormData });
+const Result = reactive({ DAILY: 0, total: 0, days: 0, target: "" });
+const valueValidCheck = (obj) => {
+    return (
+        obj.Level >= 1 &&
+        obj.Level <= 20 &&
+        obj.tLevel >= 1 &&
+        obj.tLevel <= 20 &&
+        obj.Exp <= leveMap[obj.Level] &&
+        obj.tExp <= leveMap[obj.tLevel] &&
+        obj.DAILY >= 1 &&
+        obj.DAILY <= 1500 &&
+        obj.Level <= obj.tLevel
+    );
+};
+const updateObject = (target, source) => {
+    for (let key of Object.keys(source)) {
+        target[key] = source[key];
+    }
+};
+const updateResult = () => {
+    if (!valueValidCheck(FormData)) {
+        ElMessage({
+            message: "值非法，请检查输入值",
+            type: "warning",
         });
-        watch(FormData, (FormData) => {
-            onDataChange(FormData);
-        });
-        function onDataChange(obj) {
-            if (!valueValidCheck(obj)) {
-                ElMessage({
-                    message: "值非法，请检查输入值",
-                    type: "warning",
-                });
-            } else {
-                const r = CalcIntimacy(obj.Level, obj.Exp, obj.tLevel, obj.tExp, obj.DAILY);
-                for (let key of Object.keys(r)) {
-                    result[key] = r[key];
-                }
-            }
-        }
-        function valueValidCheck(obj) {
-            return (
-                obj.Level >= 1 &&
-                obj.Level <= 20 &&
-                obj.tLevel >= 1 &&
-                obj.tLevel <= 20 &&
-                obj.Exp <= leveMap[obj.Level] &&
-                obj.tExp <= leveMap[obj.tLevel] &&
-                obj.DAILY >= 1 &&
-                obj.DAILY <= 1500 &&
-                obj.Level <= obj.tLevel
-            );
-        }
-        function restoreInitValue() {
-            ElMessage({
-                message: "已恢复初始值",
-                type: "success",
-            });
-            for (let key of Object.keys(defaultFormData)) {
-                FormData[key] = defaultFormData[key];
-            }
-        }
-        return {
-            FormData,
-            result,
-            restoreInitValue,
-        };
-    },
-});
+    } else {
+        const r = CalcIntimacy({ ...FormData });
+        updateObject(Result, r);
+    }
+};
+const restoreInitValue = () => {
+    ElMessage({
+        message: "已恢复初始值",
+        type: "success",
+    });
+    updateObject(FormData, DefaultFormData);
+};
+watchEffect(updateResult);
+ImportElementStyle();
 </script>
 
 <style scoped>
-.description span {
+.el-form-item {
     margin: 5px 5px 5px 5px;
 }
-.el-form-item {
-    padding: 5px 5px 5px 5px;
+.description {
+    margin: 10px 0px 10px 0px;
+}
+.description span {
+    margin: 5px 5px 5px 5px;
 }
 </style>
