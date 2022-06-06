@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/logo.jpg
+heroImage: /images/logo.png
 heroImageAlt: Logo
 heroText: B 站粉丝牌助手
 tagline: 适配新版粉丝牌机制 当前版本：0.3.4
