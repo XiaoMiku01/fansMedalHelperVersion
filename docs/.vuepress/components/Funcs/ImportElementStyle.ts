@@ -1,4 +1,5 @@
 import "element-plus/theme-chalk/base.css";
+import "element-plus/theme-chalk/dark/css-vars.css";
 import "element-plus/theme-chalk/el-row.css";
 import "element-plus/theme-chalk/el-col.css";
 import "element-plus/theme-chalk/el-form.css";

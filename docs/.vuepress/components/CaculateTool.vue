@@ -3,31 +3,56 @@
         <el-row>
             <el-col :span="12">
                 <el-form-item label="当前等级" prop="Level" required>
-                    <el-input v-model.number="FormData.Level" type="text" clearable />
+                    <el-input
+                        v-model.number="FormData.Level"
+                        placeholder="当前粉丝牌等级"
+                        type="text"
+                        clearable
+                    />
                 </el-form-item>
             </el-col>
             <el-col :span="12">
                 <el-form-item label="当前亲密度" prop="Exp">
-                    <el-input v-model.number="FormData.Exp" type="text" clearable />
+                    <el-input
+                        v-model.number="FormData.Exp"
+                        placeholder="当前亲密度"
+                        type="text"
+                        clearable
+                    />
                 </el-form-item>
             </el-col>
         </el-row>
         <el-row>
             <el-col :span="12">
                 <el-form-item label="目标等级" prop="tLevel" required>
-                    <el-input v-model.number="FormData.tLevel" type="text" clearable />
+                    <el-input
+                        v-model.number="FormData.tLevel"
+                        placeholder="目标粉丝牌等级"
+                        type="text"
+                        clearable
+                    />
                 </el-form-item>
             </el-col>
             <el-col :span="12">
                 <el-form-item label="目标亲密度" prop="tExp">
-                    <el-input v-model.number="FormData.tExp" type="text" clearable />
+                    <el-input
+                        v-model.number="FormData.tExp"
+                        placeholder="目标亲密度"
+                        type="text"
+                        clearable
+                    />
                 </el-form-item>
             </el-col>
         </el-row>
         <el-row>
             <el-col :span="12">
                 <el-form-item label="每日获取" prop="DAILY" required>
-                    <el-input v-model.number="FormData.DAILY" type="text" clearable />
+                    <el-input
+                        v-model.number="FormData.DAILY"
+                        placeholder="每日获取亲密度"
+                        type="text"
+                        clearable
+                    />
                 </el-form-item>
             </el-col>
             <el-col :span="12">
@@ -37,18 +62,22 @@
             </el-col>
         </el-row>
         <el-row class="description">
-            <el-row>
-                <span>如每日获取</span>
+            <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
+                <span>每日获取</span>
                 <el-tag type="success">{{ Result.DAILY }}</el-tag>
-                <span>还需要亲密度: </span>
+            </el-col>
+            <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
+                <span>还需亲密度</span>
                 <el-tag type="success">{{ Result.total }}</el-tag>
-                <span>剩余天数: </span>
+            </el-col>
+            <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
+                <span>剩余天数</span>
                 <el-tag type="success">{{ Result.days }}</el-tag>
-            </el-row>
-            <el-row>
-                <span>目标日期: </span>
+            </el-col>
+            <el-col :xs="12" :sm="6" :md="6" :lg="6" :xl="6">
+                <span>目标日期</span>
                 <el-tag type="success">{{ Result.target }}</el-tag>
-            </el-row>
+            </el-col>
         </el-row>
     </el-form>
 </template>
@@ -122,7 +151,12 @@ ImportElementStyle();
     margin: 5px 5px 5px 5px;
 }
 .description {
+    justify-content: center;
     margin: 10px 0px 10px 0px;
+}
+.description .el-col {
+    display: flex;
+    flex-direction: column;
 }
 .description span {
     margin: 5px 5px 5px 5px;

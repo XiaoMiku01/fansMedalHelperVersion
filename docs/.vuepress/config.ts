@@ -8,11 +8,11 @@ export default defineUserConfig({
     lang: "zh-CN",
     title: "B站粉丝牌助手文档",
     description: "B站粉丝牌助手文档",
-    head: [["link", { rel: "icon", href: "/images/logo.jpg" }]],
+    head: [["link", { rel: "icon", href: "/images/logo.png" }]],
     theme: localTheme({
         title: "B站粉丝牌助手文档",
         description: "B站粉丝牌助手文档",
-        logo: "/images/logo.jpg",
+        logo: "/images/logo.png",
         navbar: [
             { text: "首页", link: "/" },
             {

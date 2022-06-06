@@ -58,6 +58,7 @@ onMounted(async function () {
   
   #pio {
     height: 240px;
+    width: auto;
   }
   
   .pio-action .pio-home {
