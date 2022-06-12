@@ -125,14 +125,12 @@ import {
     ElCheckbox,
     ElMessage,
 } from "element-plus";
-
-const USERS = reactive([
-    {
-        access_key: "",
-        white_uid: "",
-        banned_uid: "",
-    },
-]);
+const user = {
+    access_key: "",
+    white_uid: 0,
+    banned_uid: 0,
+};
+const USERS = reactive([{ ...user }]);
 const MOREPUSH = ref(`{"notifier":"pushplus","params":{"markdown":False,"token":"xxxxxx"}}
 `);
 const FormData = reactive({
@@ -147,11 +145,14 @@ const FormData = reactive({
     WATCHINGLIVE: 1,
     WEARMEDAL: true,
 });
-
 const processFormData = (formData) => {
     const result = toRaw(formData);
     result.ASYNC = result.ASYNC == true ? 1 : 0;
     result.WEARMEDAL = result.WEARMEDAL == true ? 1 : 0;
+    result.USERS.forEach((user) => {
+        user.white_uid = user.white_uid === "" ? 0 : user.white_uid;
+        user.banned_uid = user.banned_uid === "" ? 0 : user.banned_uid;
+    });
     // formData变化后重新调用函数，result不会重新生成，而是会继承上一次的result值
     if (typeof result.MOREPUSH !== "object") {
         const flag =
@@ -164,19 +165,12 @@ const processFormData = (formData) => {
     }
     return result;
 };
-
 const onTagClose = (index) => {
     USERS.splice(index, 1);
 };
-
 const addUser = () => {
-    USERS.push({
-        access_key: "",
-        white_uid: "",
-        banned_uid: "",
-    });
+    USERS.push({ ...user });
 };
-
 const generateYAML = () => {
     const data = json2yaml(processFormData(FormData));
     const result = CopyText(data);
