@@ -48,7 +48,20 @@ export default defineUserConfig({
                 ],
             },
             { text: "更新日志", link: "/changelog/" },
-            { text: "小工具", link: "/tools/" },
+            {
+                text: "小工具",
+                link: "/tools/",
+                children: [
+                    {
+                        text: "粉丝牌等级计算器",
+                        link: "/tools/fansMedalCaculator",
+                    },
+                    {
+                        text: "配置文件生成器",
+                        link: "/tools/userConfigGenerator",
+                    },
+                ],
+            },
         ],
         repo: "XiaoMiku01/fansMedalHelper",
         docsRepo: "https://github.com/XiaoMiku01/fansMedalHelperVersion",

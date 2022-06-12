@@ -5,9 +5,13 @@ import "element-plus/theme-chalk/el-col.css";
 import "element-plus/theme-chalk/el-form.css";
 import "element-plus/theme-chalk/el-form-item.css";
 import "element-plus/theme-chalk/el-input.css";
+import "element-plus/theme-chalk/el-select.css";
 import "element-plus/theme-chalk/el-tag.css";
+import "element-plus/theme-chalk/el-check-tag.css";
 import "element-plus/theme-chalk/el-message.css";
 import "element-plus/theme-chalk/el-button.css";
+import "element-plus/theme-chalk/el-divider.css";
+import "element-plus/theme-chalk/el-checkbox.css";
 
 export default function ImportElementStyle(): void {
     console.log("Components Registered");
