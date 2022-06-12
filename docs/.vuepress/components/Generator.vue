@@ -179,11 +179,18 @@ const addUser = () => {
 
 const generateYAML = () => {
     const data = json2yaml(processFormData(FormData));
-    CopyText(data);
-    ElMessage({
-        type: "success",
-        message: "配置文件已复制到剪切板",
-    });
+    const result = CopyText(data);
+    if (result) {
+        ElMessage({
+            type: "success",
+            message: "配置文件已复制到剪切板",
+        });
+    } else {
+        ElMessage({
+            type: "error",
+            message: "复制失败",
+        });
+    }
     console.log(data);
 };
 ImportElementStyle();

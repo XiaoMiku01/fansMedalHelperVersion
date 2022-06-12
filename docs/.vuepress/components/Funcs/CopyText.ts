@@ -2,6 +2,7 @@ export default function copyText(text) {
     try {
         if (navigator.clipboard) {
             navigator.clipboard.writeText(text); // use navigator.clipboard
+            return true;
         } else {
             var textarea = document.createElement("textarea");
             document.body.appendChild(textarea);
@@ -15,8 +16,10 @@ export default function copyText(text) {
             document.execCommand("copy", true);
             // remove the input area
             document.body.removeChild(textarea);
+            return true;
         }
     } catch (err) {
         console.log(err);
+        return false;
     }
 }
