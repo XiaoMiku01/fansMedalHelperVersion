@@ -1,7 +1,7 @@
 <template>
     <el-form label-position="top" :model="FormData" style="max-width: 800px" validate>
         <el-row class="config-users" v-for="(USER, index) of FormData.USERS" :key="USER.access_key">
-            <el-col :span="3">
+            <el-col :xs="24" :sm="3" :md="3" :lg="3" :xl="3">
                 <div class="option">
                     <el-tag
                         :closable="index !== 0"
@@ -21,7 +21,7 @@
                     </el-check-tag>
                 </div>
             </el-col>
-            <el-col :span="21">
+            <el-col :xs="24" :sm="21" :md="21" :lg="21" :xl="21">
                 <el-form-item label="Access_key" prop="access_key" required>
                     <el-input
                         v-model="USER.access_key"
@@ -43,10 +43,12 @@
         </el-row>
         <el-divider />
         <el-row class="config-details">
-            <el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
                 <el-form-item label="Corn表达式" prop="CRON">
                     <el-input v-model="FormData.CRON" placeholder="请输入Corn表达式" type="text" />
                 </el-form-item>
+            </el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
                 <el-form-item label="Server酱SENDKEY" prop="SENDKEY">
                     <el-input
                         v-model="FormData.SENDKEY"
@@ -54,6 +56,8 @@
                         type="text"
                     />
                 </el-form-item>
+            </el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
                 <el-form-item label="配置更多推送" prop="MOREPUSH">
                     <el-input
                         v-model="FormData.MOREPUSH"
@@ -62,10 +66,12 @@
                     />
                 </el-form-item>
             </el-col>
-            <el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
                 <el-form-item label="点赞间隔时间" prop="LIKE_CD">
                     <el-input v-model="FormData.LIKE_CD" placeholder="请输入LIKE_CD" type="text" />
                 </el-form-item>
+            </el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
                 <el-form-item label="分享间隔时间" prop="SHARE_CD">
                     <el-input
                         v-model="FormData.SHARE_CD"
@@ -73,6 +79,8 @@
                         type="text"
                     />
                 </el-form-item>
+            </el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
                 <el-form-item label="弹幕间隔时间" prop="DANMAKU_CD">
                     <el-input
                         v-model="FormData.DANMAKU_CD"
