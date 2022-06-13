@@ -20,7 +20,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"version":   "0.3.4",
 			"changelog": "修复了获取粉丝牌失败导致的异常BUG  \n",
-			"notice":    "祝向晚生日快乐！欢迎大家参加6月12日向晚的生日会！",
+			"notice":    "",
 		})
 	})
 	router.Run(":9000")
