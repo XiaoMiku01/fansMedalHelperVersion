@@ -48,12 +48,13 @@ sidebar:
 -   如何更新  
     新建一个名为 `updata.sh` 的脚本，内容为：
     ```shell
+    cp fansMedalHelper/users.yaml users.yaml
     rm -rf fansMedalHelper
     git clone https://github.com/XiaoMiku01/fansMedalHelper.git
+    rm fansMedalHelper/users.yaml
+    mv users.yaml fansMedalHelper/users.yaml
     ```
     之后创建任务执行这个脚本，命令填 `task updata.sh`。运行完成后就更新成功
-    ::: warning 警告
-    更新后会重置用户配置，请在更新前备份好配置文件，然后重新配置
 
 ## Docker 部署
 
