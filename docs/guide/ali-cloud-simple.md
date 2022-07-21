@@ -12,7 +12,7 @@ sidebar:
 
 ## 注册并开通功能
 
-访问[阿里云](https://www.aliyun.com/)官网，注册后完成实名认证，并开通云函数功能。
+访问[阿里云](https://www.aliyun.com/)官网，注册后完成实名认证，并开通云函数、SLS功能。
 
 ### 实名认证
 
@@ -56,12 +56,51 @@ Fork完成后，回到应用配置界面，按下图配置应用
 * 角色名称: 按提示创建
 * 高级配置/环境变量
   * 选择`使用表单编辑`，创建一个`USERS`变量，**全为大写**
+  * USERS的值为**最小化**的**JSON格式**的配置信息
+  * [在线YAML转JSON](https://www.bejson.com/json/json2yaml/)
+  * [配置文件说明](http://localhost:8081/fansMedalHelperVersion/guide/#配置文件说明-users-yaml)
 
-**USERS的值**：填入的是**最小化**的**JSON格式**的配置文件，详见[配置文件说明](http://localhost:8081/fansMedalHelperVersion/guide/#配置文件说明-users-yaml)
+### JSON格式配置文件示例
 
-> 如果`仓库名称`中未出现`fansMedalHelper`，可以点击右侧刷新按钮重新获取仓库列表
-> 
-> 原来使用`users.yaml`的用户需要使用`YAML转JSON工具`转换、最小化后填入
+```json
+{
+  "USERS":[
+    {
+      "access_key":"XXXXXX",
+      "white_uid":0,
+      "banned_uid":0
+    },
+    {
+      "access_key":"",
+      "white_uid":0,
+      "banned_uid":0
+    }
+  ],
+  "CRON":"",
+  "SENDKEY":"",
+  "MOREPUSH": {
+      "notifier": "pushplus",
+      "params": {
+        "markdown": false,
+        "token": "XXXXXXXXXXXXX"
+      }
+  },,
+  "PORXY":"",
+  "ASYNC":1,
+  "LIKE_CD":2,
+  "SHARE_CD":5,
+  "DANMAKU_CD":6,
+  "WATCHINGLIVE":65,
+  "WEARMEDAL":0,
+  "SIGNINGROUP":2
+}
+```
+
+::: warning 注意
+  老用户配置文件中的`WATCHINGLIVE`值为 1 新版本已经更改为 65
+  
+  如果`仓库名称`中未出现`fansMedalHelper`，可以点击右侧刷新按钮重新获取仓库列表
+:::
 
 ## 创建应用
 
