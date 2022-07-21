@@ -103,3 +103,109 @@ sidebar:
     docker stop fansmedalhelper
     docker run -d -e USERS='<这里填写刚刚转换的json格式字符串>' --name fansmedalhelper xiaomiku01/fansmedalhelper:latest
     ```
+=======
+---
+sidebar:
+    - /guide/
+    - /guide/location/
+    - /guide/ali-cloud-simple/
+    - /guide/ali-cloud/
+    - /guide/tx-cloud/
+    - /guide/other/
+---
+
+# 其他部署方式
+
+::: warning 注意
+没什么好注意的，单纯为了格式一样好看点
+:::
+
+## 青龙面板部署
+
+-   进入面板，左侧脚本管理，点击右上角加号，选择“新建文件”，填写脚本名称 `pull.sh`，点击“保存”
+    ![](../images/other/image1.png)
+-   输入以下三行内容，点击“保存”
+    ```shell
+    python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple
+    git clone https://github.com/XiaoMiku01/fansMedalHelper.git
+    pip3 install -r fansMedalHelper/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+    ```
+    ![](../images/other/image2.png)
+-   面板左侧定时任务，然后新建任务，名称随便填，命令填 `task pull.sh`, 定时规则随便填，因为这个任务只要执行一次，确定  
+    ![](../images/other/image3.png)
+
+-   点击右侧运行，打开日志，等待处出现 Successfully，说明依赖安装成功，之后就可以禁用或者删除这个脚本了
+    ![](../images/other/image4.png)
+
+-   回到脚本管理，找到 `fansMedalHelper/users.yaml` 文件，编辑填写自己的配置，点击“保存”
+    ![](../images/other/image5.png)
+    ::: tip 提示
+    配置文件说明 ：[配置文件](./#配置文件说明-users-yaml)  
+    由于是面饭触发，配置文件中的 `CRON` 无需填写  
+    B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
+    :::
+-   保存后新建定时任务，名称随便填，命令填 `task fansMedalHelper/main.py`, 定时规则填每天执行的时间，确定
+    ![](../images/other/image6.png)
+
+-   部署完毕，点击运行测试，查看日志是否正常  
+    ::: tip 提示
+    日志中可能出现乱码，是正常现象，因为是输出的日志无法显示文字颜色
+    :::
+
+-   如何更新  
+    新建一个名为 `updata.sh` 的脚本，内容为：
+    ```shell
+    rm -rf fansMedalHelper
+    git clone https://github.com/XiaoMiku01/fansMedalHelper.git
+    ```
+    之后创建任务执行这个脚本，命令填 `task updata.sh`。运行完成后就更新成功
+    ::: warning 警告
+    更新后会重置用户配置，请在更新前备份好配置文件，然后重新配置
+
+## Docker 部署
+
+-   填写配置文件 [配置文件](./#配置文件说明-users-yaml)
+
+-   填写完成后将 yaml 格式文件转换成 json 格式，网址为：[yaml-to-json](https://www.convertjson.com/yaml-to-json.htm)
+    ![](../images/other/image7.png)
+    ::: warning 注意
+    Docker 部署时需要填写 CRON，否则只会执行一次  
+    还需勾选右边的 `Minimize JSON` 压缩 JSON
+    :::
+
+-   拉取镜像
+
+    ```shell
+    docker pull xiaomiku01/fansMedalHelper:latest
+    ```
+
+-   创建运行容器
+
+    ```shell
+    docker run -d -e USERS='<这里填写刚刚转换的json格式字符串>' --name fansmedalhelper xiaomiku01/fansmedalhelper:latest
+    ```
+
+    ::: warning 警告
+    json 字符串必须用单引号括起来，否则肯识别失败
+    例如：
+
+    ```shell
+    docker run -d -e USERS='{"users": [{"user_id": "123456789", "access_key": "123456789", "secret_key": "123456789"}]}' --name fansmedalhelper xiaomiku01/fansmedalhelper:latest
+    ```
+
+    :::
+
+-   查看运行日志
+
+    ```shell
+    docker logs fansmedalhelper
+    ```
+
+-   如何更新
+    :::tip 提示
+    每次容器启动后都会自动拉取最新代码，所有只需要停止当前容器，重新运行即可
+    :::
+    ```shell
+    docker stop fansmedalhelper
+    docker run -d -e USERS='<这里填写刚刚转换的json格式字符串>' --name fansmedalhelper xiaomiku01/fansmedalhelper:latest
+    ```
