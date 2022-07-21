@@ -116,8 +116,11 @@
                 </el-form-item>
             </el-col>
             <el-col>
-                <el-button class="generateBtn" type="primary" size="large" @click="generateYAML"
-                    >生成配置文件并复制到剪切板</el-button
+                <el-button class="generateBtn" type="primary" @click="generateYAML"
+                    >生成YAML配置文件并复制到剪切板</el-button
+                >
+                <el-button class="generateBtn" type="primary" @click="generateJSON"
+                    >生成JSON配置文件并复制到剪切板</el-button
                 >
             </el-col>
         </el-row>
@@ -156,16 +159,16 @@ const FormData = reactive({
     CRON: "",
     SENDKEY: "",
     MOREPUSH: MOREPUSH.value,
-    PORXY: '',
+    PORXY: "",
     ASYNC: true,
     LIKE_CD: 2,
     SHARE_CD: 5,
     DANMAKU_CD: 6,
     WATCHINGLIVE: 65,
     WEARMEDAL: true,
-    SIGNINGROUP: 2
+    SIGNINGROUP: 2,
 });
-const processFormData = (formData) => {
+const processFormData = (formData, isModify) => {
     const result = toRaw(formData);
     result.ASYNC = result.ASYNC == true ? 1 : 0;
     result.WEARMEDAL = result.WEARMEDAL == true ? 1 : 0;
@@ -173,14 +176,17 @@ const processFormData = (formData) => {
         user.white_uid = user.white_uid === "" ? 0 : user.white_uid;
         user.banned_uid = user.banned_uid === "" ? 0 : user.banned_uid;
     });
-    // formData变化后重新调用函数，result不会重新生成，而是会继承上一次的result值
-    if (typeof result.MOREPUSH !== "object") {
-        const flag =
-            result.MOREPUSH.indexOf(`"True"`) === -1 && result.MOREPUSH.indexOf(`"False"`) === -1;
-        if (flag) {
-            result.MOREPUSH = result.MOREPUSH.replace(`False`, `"False"`);
-            result.MOREPUSH = result.MOREPUSH.replace(`True`, `"True"`);
-        }
+    // 处理 MOREPUSH
+    // formData变化后重新调用函数，result不会重新生成，而是会继承上一次的result值 用typeof判定
+    if (isModify && typeof result.MOREPUSH !== "object") {
+        // YAML
+        result.MOREPUSH = result.MOREPUSH.replace(`False`, `"False"`);
+        result.MOREPUSH = result.MOREPUSH.replace(`True`, `"True"`);
+        result.MOREPUSH = JSON.parse(result.MOREPUSH);
+    } else {
+        // JSON
+        result.MOREPUSH = result.MOREPUSH.replace(`False`, false);
+        result.MOREPUSH = result.MOREPUSH.replace(`True`, true);
         result.MOREPUSH = JSON.parse(result.MOREPUSH);
     }
     return result;
@@ -192,19 +198,23 @@ const addUser = () => {
     USERS.push({ ...user });
 };
 const generateYAML = () => {
-    const data = json2yaml(processFormData(FormData));
+    const data = json2yaml(processFormData(FormData, true));
     const result = CopyText(data);
-    if (result) {
+    result &&
         ElMessage({
             type: "success",
             message: "配置文件已复制到剪切板",
         });
-    } else {
+    console.log(data);
+};
+const generateJSON = () => {
+    const data = processFormData(FormData, false);
+    const result = CopyText(JSON.stringify(data));
+    result &&
         ElMessage({
-            type: "error",
-            message: "复制失败",
+            type: "success",
+            message: "配置文件已复制到剪切板",
         });
-    }
     console.log(data);
 };
 ImportElementStyle();
