@@ -43,12 +43,12 @@
         </el-row>
         <el-divider />
         <el-row class="config-details">
-            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
                 <el-form-item label="Corn表达式" prop="CRON">
                     <el-input v-model="FormData.CRON" placeholder="请输入Corn表达式" type="text" />
                 </el-form-item>
             </el-col>
-            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
                 <el-form-item label="Server酱SENDKEY" prop="SENDKEY">
                     <el-input
                         v-model="FormData.SENDKEY"
@@ -57,7 +57,7 @@
                     />
                 </el-form-item>
             </el-col>
-            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
                 <el-form-item label="配置更多推送" prop="MOREPUSH">
                     <el-input
                         v-model="FormData.MOREPUSH"
@@ -66,12 +66,12 @@
                     />
                 </el-form-item>
             </el-col>
-            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
                 <el-form-item label="点赞间隔时间" prop="LIKE_CD">
                     <el-input v-model="FormData.LIKE_CD" placeholder="请输入LIKE_CD" type="text" />
                 </el-form-item>
             </el-col>
-            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
                 <el-form-item label="分享间隔时间" prop="SHARE_CD">
                     <el-input
                         v-model="FormData.SHARE_CD"
@@ -80,11 +80,29 @@
                     />
                 </el-form-item>
             </el-col>
-            <el-col :xs="12" :sm="8" :md="8" :lg="8" :xl="8">
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
                 <el-form-item label="弹幕间隔时间" prop="DANMAKU_CD">
                     <el-input
                         v-model="FormData.DANMAKU_CD"
                         placeholder="请输入DANMAKU_CD"
+                        type="text"
+                    />
+                </el-form-item>
+            </el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
+                <el-form-item label="每日观看直播时长" prop="WATCHINGLIVE">
+                    <el-input
+                        v-model="FormData.WATCHINGLIVE"
+                        placeholder="请输入WATCHINGLIVE"
+                        type="text"
+                    />
+                </el-form-item>
+            </el-col>
+            <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
+                <el-form-item label="应援团签到CD时间" prop="SIGNINGROUP">
+                    <el-input
+                        v-model="FormData.SIGNINGROUP"
+                        placeholder="请输入SIGNINGROUP"
                         type="text"
                     />
                 </el-form-item>
@@ -138,12 +156,14 @@ const FormData = reactive({
     CRON: "",
     SENDKEY: "",
     MOREPUSH: MOREPUSH.value,
+    PORXY: '',
     ASYNC: true,
     LIKE_CD: 2,
     SHARE_CD: 5,
     DANMAKU_CD: 6,
-    WATCHINGLIVE: 1,
+    WATCHINGLIVE: 65,
     WEARMEDAL: true,
+    SIGNINGROUP: 2
 });
 const processFormData = (formData) => {
     const result = toRaw(formData);
