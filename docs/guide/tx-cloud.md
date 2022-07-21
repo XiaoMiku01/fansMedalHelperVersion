@@ -2,12 +2,13 @@
 sidebar:
     - /guide/
     - /guide/location/
+    - /guide/ali-cloud-simple/
     - /guide/ali-cloud/
     - /guide/tx-cloud/
     - /guide/other/
 ---
 
-# 腾讯云函数部署（0 基础）
+# 腾讯云函数部署
 
 ::: warning 注意
 在首次开通腾讯云 SCF 功能的**前三个月可以免费使用**，之后每个月收取*12.8 元*。

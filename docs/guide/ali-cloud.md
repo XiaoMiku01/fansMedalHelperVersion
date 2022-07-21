@@ -2,12 +2,13 @@
 sidebar:
     - /guide/
     - /guide/location/
+    - /guide/ali-cloud-simple/
     - /guide/ali-cloud/
     - /guide/tx-cloud/
     - /guide/other/
 ---
 
-# 阿里云计算(函数)部署（0 基础）
+# 阿里云计算(函数)部署
 
 ::: warning 注意
 此方法不免费，经过测试，执行一次大概 0.02 元，一个月 30 次就是 0.6 元，但是适合 0 基础小白、没有服务器的小伙伴。
