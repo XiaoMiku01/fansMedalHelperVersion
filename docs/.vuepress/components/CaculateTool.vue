@@ -102,7 +102,7 @@ const DefaultFormData = {
     Exp: 0,
     tLevel: 20,
     tExp: 0,
-    DAILY: 1300,
+    DAILY: 1500,
 };
 const FormData = reactive({ ...DefaultFormData });
 const Result = reactive({ DAILY: 0, total: 0, days: 0, target: "" });

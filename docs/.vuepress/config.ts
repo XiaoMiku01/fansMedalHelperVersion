@@ -32,6 +32,10 @@ export default defineUserConfig({
                                 link: "/guide/location",
                             },
                             {
+                                text: "阿里云函数部署（0 基础）",
+                                link: "/guide/ali-cloud-simple",
+                            },
+                            {
                                 text: "阿里云函数部署",
                                 link: "/guide/ali-cloud",
                             },
