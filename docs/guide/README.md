@@ -2,6 +2,7 @@
 sidebar:
     - /guide/
     - /guide/location/
+    - /guide/ali-cloud-simple/
     - /guide/ali-cloud/
     - /guide/tx-cloud/
     - /guide/other/
