@@ -44,7 +44,18 @@ sidebar:
 
 授权成功后，用授权的账号访问仓库[XiaoMiku01/fansMedalHelper](https://github.com/XiaoMiku01/fansMedalHelper)并点击Fork
 
-![4](../images/ali-cloud-simple/4.png)
+![4](../images/ali-cloud-simple/4.png)  
+
+## 获取账号配置  
+
+进入本文档的小工具-[配置文件生成器](../tools/userConfigGenerator)页面 填写完成后,点击生成JSON到剪切板  
+![9](../images/ali-cloud-simple/9.png)  
+
+::: tip 提示
+配置文件说明 ：[配置文件](./#配置文件说明-users-yaml)  
+由于是云函数触发，配置文件中的 `CRON` 无需填写  
+B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
+:::
 
 ## 配置应用
 
@@ -55,46 +66,9 @@ Fork完成后，回到应用配置界面，按下图配置应用
 * 仓库名称: `fansMedalHelper`
 * 角色名称: 按提示创建
 * 高级配置/环境变量
-  * 选择`使用表单编辑`，创建一个`USERS`变量，**全为大写**
-  * USERS的值为**最小化**的**JSON格式**的配置信息
-  * [在线YAML转JSON](https://www.bejson.com/json/json2yaml/)
-  * [配置文件说明](http://localhost:8081/fansMedalHelperVersion/guide/#配置文件说明-users-yaml)
+* 选择`使用表单编辑`，创建一个`USERS`变量，**全为大写** 值填写刚刚剪切板的内容  
+![10](../images/ali-cloud-simple/10.png)
 
-### JSON格式配置文件示例
-
-```json
-{
-  "USERS":[
-    {
-      "access_key":"XXXXXX",
-      "white_uid":0,
-      "banned_uid":0
-    },
-    {
-      "access_key":"",
-      "white_uid":0,
-      "banned_uid":0
-    }
-  ],
-  "CRON":"",
-  "SENDKEY":"",
-  "MOREPUSH": {
-      "notifier": "pushplus",
-      "params": {
-        "markdown": false,
-        "token": "XXXXXXXXXXXXX"
-      }
-  },,
-  "PORXY":"",
-  "ASYNC":1,
-  "LIKE_CD":2,
-  "SHARE_CD":5,
-  "DANMAKU_CD":6,
-  "WATCHINGLIVE":65,
-  "WEARMEDAL":0,
-  "SIGNINGROUP":2
-}
-```
 
 ::: warning 注意
   老用户配置文件中的`WATCHINGLIVE`值为 1 新版本已经更改为 65
@@ -121,5 +95,24 @@ Fork完成后，回到应用配置界面，按下图配置应用
 ![8](../images/ali-cloud-simple/8.png)
 
 ### 配置触发器
+项目默认每天 00:01 运行一次，如需更改  
+可以在`触发器管理`中配置触发器  
 
-可以在`触发器管理`中配置触发器，以实现每天自动运行。
+## 开启自动更新（可选）  
+::: tip 提示  
+开启自动更新后，项目有更新时都会自动部署  
+:::
+
+进入自己 github 账户 刚刚 fork 的仓库  
+按下图操作
+![11](../images/ali-cloud-simple/11.png)  
+![12](../images/ali-cloud-simple/12.png)  
+
+::: warning 注意  
+开启后，github 每个小时都会拉取一次最新代码，自动同步至阿里云  
+
+如果需要更新配置(如：账号登录过期)，还需去阿里云更新配置，如下图
+:::
+进入刚刚创建的应用配置界面  
+编辑环境变量后，点击重新部署  
+![13](../images/ali-cloud-simple/13.png)  

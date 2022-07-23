@@ -44,7 +44,7 @@
         <el-divider />
         <el-row class="config-details">
             <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
-                <el-form-item label="Corn表达式" prop="CRON">
+                <el-form-item label="Corn表达式(本地运行时填写)" prop="CRON">
                     <el-input v-model="FormData.CRON" placeholder="请输入Corn表达式" type="text" />
                 </el-form-item>
             </el-col>
