@@ -1,0 +1,1 @@
+const e={key:"v-26a1fdc0",path:"/tools/userConfigGenerator.html",title:"\u914D\u7F6E\u6587\u4EF6\u751F\u6210\u5668",lang:"zh-CN",frontmatter:{sidebar:!1},excerpt:"",headers:[],git:{updatedTime:165856761e4,contributors:[{name:"XiaoMiku01",email:"loveava0612@outlook.com",commits:1}]},filePathRelative:"tools/userConfigGenerator.md"};export{e as data};
