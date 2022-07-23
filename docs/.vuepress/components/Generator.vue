@@ -128,7 +128,6 @@
 </template>
 
 <script setup>
-import * as ElementPlusIconsVue from "@element-plus/icons";
 import ImportElementStyle from "./Funcs/ImportElementStyle";
 import CopyText from "./Funcs/CopyText";
 import json2yaml from "./Funcs/Json2Yaml";
