@@ -152,8 +152,7 @@ const user = {
     banned_uid: 0,
 };
 const USERS = reactive([{ ...user }]);
-const MOREPUSH = ref(`{"notifier":"pushplus","params":{"markdown":False,"token":"xxxxxx"}}
-`);
+const MOREPUSH = ref("");
 const FormData = reactive({
     USERS,
     CRON: "",
