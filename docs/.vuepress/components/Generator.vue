@@ -67,12 +67,12 @@
                 </el-form-item>
             </el-col>
             <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
-                <el-form-item label="点赞间隔时间" prop="LIKE_CD">
+                <el-form-item label="点赞间隔时间(s)" prop="LIKE_CD">
                     <el-input v-model="FormData.LIKE_CD" placeholder="请输入LIKE_CD" type="text" />
                 </el-form-item>
             </el-col>
             <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
-                <el-form-item label="分享间隔时间" prop="SHARE_CD">
+                <el-form-item label="分享间隔时间(s)" prop="SHARE_CD">
                     <el-input
                         v-model="FormData.SHARE_CD"
                         placeholder="请输入SHARE_CD"
@@ -81,7 +81,7 @@
                 </el-form-item>
             </el-col>
             <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
-                <el-form-item label="弹幕间隔时间" prop="DANMAKU_CD">
+                <el-form-item label="弹幕间隔时间(s)" prop="DANMAKU_CD">
                     <el-input
                         v-model="FormData.DANMAKU_CD"
                         placeholder="请输入DANMAKU_CD"
@@ -90,7 +90,7 @@
                 </el-form-item>
             </el-col>
             <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
-                <el-form-item label="每日观看直播时长" prop="WATCHINGLIVE">
+                <el-form-item label="每日观看直播时长(min)" prop="WATCHINGLIVE">
                     <el-input
                         v-model="FormData.WATCHINGLIVE"
                         placeholder="请输入WATCHINGLIVE"
@@ -99,7 +99,7 @@
                 </el-form-item>
             </el-col>
             <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="6">
-                <el-form-item label="应援团签到CD时间" prop="SIGNINGROUP">
+                <el-form-item label="应援团签到CD时间(s)" prop="SIGNINGROUP">
                     <el-input
                         v-model="FormData.SIGNINGROUP"
                         placeholder="请输入SIGNINGROUP"
@@ -128,6 +128,7 @@
 </template>
 
 <script setup>
+import * as ElementPlusIconsVue from "@element-plus/icons";
 import ImportElementStyle from "./Funcs/ImportElementStyle";
 import CopyText from "./Funcs/CopyText";
 import json2yaml from "./Funcs/Json2Yaml";
@@ -176,6 +177,7 @@ const processFormData = (formData, isModify) => {
         user.white_uid = user.white_uid === "" ? 0 : user.white_uid;
         user.banned_uid = user.banned_uid === "" ? 0 : user.banned_uid;
     });
+    result.MOREPUSH = result.MOREPUSH === "" ? "null" : result.MOREPUSH;
     // 处理 MOREPUSH
     // formData变化后重新调用函数，result不会重新生成，而是会继承上一次的result值 用typeof判定
     if (isModify && typeof result.MOREPUSH !== "object") {
