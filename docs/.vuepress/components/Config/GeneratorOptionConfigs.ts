@@ -1,4 +1,6 @@
-const userOptionConfigs = {
+import type { IConfig } from "../types";
+
+const userOptionConfigs: IConfig = {
     col: {
         xs: 6,
         sm: 6,
@@ -16,16 +18,18 @@ const userOptionConfigs = {
             prop: "white_uid",
             name: "白名单",
             type: "input",
+            info: "白名单用户ID, 可以是多个用户ID, 以逗号分隔,填写后只会打卡这些用户,黑名单失效,不用就填0",
         },
         {
             prop: "banned_uid",
             name: "黑名单",
             type: "input",
+            info: "黑名单UID 同上,填了后将不会打卡，点赞，分享 用英文逗号分隔 不填则不限制,两个都填0则不限制,打卡所有直播间",
         },
     ],
 };
 
-const commonOptionConfigs = {
+const commonOptionConfigs: IConfig = {
     col: {
         xs: 12,
         sm: 8,
