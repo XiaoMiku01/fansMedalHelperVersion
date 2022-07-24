@@ -13,6 +13,7 @@ const cache = {
     get: (key: string) =>
         // ignore error here plz.
         window?.localStorage.getItem(key) ? JSON.parse(window?.localStorage.getItem(key)) : null,
+    remove: (key: string) => window?.localStorage.removeItem(key),
 };
 
 export { deepCopy, cache };

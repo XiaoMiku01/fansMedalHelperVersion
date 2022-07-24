@@ -11,11 +11,13 @@
         <el-divider />
         <el-button type="primary" @click="generateJSON">生成JSON</el-button>
         <el-button type="primary" @click="generateYAML">生成YAML</el-button>
+        <el-button @click="restoreCache">清除缓存</el-button>
     </el-form>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { ElRow, ElForm, ElButton, ElDivider, ElMessage } from "element-plus";
 import UserOption from "./BaseUI/UserOption.vue";
 import FormItems from "./BaseUI/FormItems.vue";
 import ImportElementStyle from "./Funcs/ImportElementStyle";
@@ -23,22 +25,14 @@ import { deepCopy, cache } from "./Funcs/Utils";
 import { userOptionConfigs, commonOptionConfigs } from "./Config/GeneratorOptionConfigs";
 import CopyText from "./Funcs/CopyText";
 import json2yaml from "./Funcs/Json2Yaml";
-import {
-    ElRow,
-    ElCol,
-    ElForm,
-    ElTag,
-    ElCheckTag,
-    ElButton,
-    ElDivider,
-    ElMessage,
-} from "element-plus";
 
 const afterProcess = (data) => {
-    data["MOREPUSH"] = JSON.stringify(data["MOREPUSH"]);
-    data["ASYNC"] === 1 ? (data["ASYNC"] = true) : (data["ASYNC"] = false);
-    data["WEARMEDAL"] === 1 ? (data["WEARMEDAL"] = true) : (data["WEARMEDAL"] = false);
-    return data;
+    if (data) {
+        data["MOREPUSH"] = JSON.stringify(data["MOREPUSH"]);
+        data["ASYNC"] === 1 ? (data["ASYNC"] = true) : (data["ASYNC"] = false);
+        data["WEARMEDAL"] === 1 ? (data["WEARMEDAL"] = true) : (data["WEARMEDAL"] = false);
+    }
+    return data ?? undefined;
 };
 
 const defaultConfig = afterProcess(cache.get("json")) || {
@@ -104,5 +98,17 @@ const generateYAML = () => {
         });
     return data;
 };
+
+const restoreCache = () => {
+    cache.remove("json");
+    ElMessage({
+        type: "success",
+        message: "本地缓存已清除，即将刷新",
+    });
+    setTimeout(() => {
+        window?.location.reload();
+    }, 1500);
+};
+
 ImportElementStyle();
 </script>
