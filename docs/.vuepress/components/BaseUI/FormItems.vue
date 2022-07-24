@@ -26,7 +26,6 @@
             ></el-checkbox>
             <el-input
                 v-if="option.style === 'input'"
-                class="no-input-arrow"
                 v-model="formData[option.prop]"
                 @change="onInputChange($event, option)"
                 :type="option.type"
@@ -96,14 +95,5 @@ defineExpose({
 }
 .required {
     color: var(--el-color-danger);
-}
-.no-input-arrow {
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
-    input[type="number"] {
-        -moz-appearance: textfield;
-    }
 }
 </style>
