@@ -2,20 +2,23 @@
     <el-form label-position="top" style="max-width: 800px">
         <el-row v-for="(USER, index) of formData.USERS" :key="index">
             <UserOption v-bind="{ index, formData }"></UserOption>
-            <FormItems v-bind="{ formData: USER, optionConfig: userOptionConfigs }"></FormItems>
+            <FormItems
+                ref="UserOptionsRef"
+                v-bind="{ formData: USER, optionConfig: userOptionConfigs }"
+            ></FormItems>
         </el-row>
         <el-divider />
         <el-row>
             <FormItems v-bind="{ formData, optionConfig: commonOptionConfigs }"></FormItems>
         </el-row>
         <el-divider />
-        <el-button type="primary" @click="generateJSON">生成JSON</el-button>
-        <el-button type="primary" @click="generateYAML">生成YAML</el-button>
+        <el-button type="primary" @click="generate('json')">生成JSON</el-button>
+        <el-button type="primary" @click="generate('yaml')">生成YAML</el-button>
         <el-button @click="restoreCache">清除缓存</el-button>
     </el-form>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref } from "vue";
 import { ElRow, ElForm, ElButton, ElDivider, ElMessage } from "element-plus";
 import UserOption from "./BaseUI/UserOption.vue";
@@ -58,6 +61,8 @@ const defaultConfig = afterProcess(cache.get("json")) || {
 
 const formData = ref(deepCopy(defaultConfig));
 
+const UserOptionsRef = ref<InstanceType<typeof FormItems>>();
+
 const preProcess = (data) => {
     // turn `MOREPUSH` from string to object
     // turn `ASYNC` `WEARMEDAL` boolean to number
@@ -78,28 +83,17 @@ const preProcess = (data) => {
     return data;
 };
 
-const generateJSON = () => {
-    const data = preProcess(deepCopy(formData.value));
-    data &&
-        CopyText(JSON.stringify(data)) &&
-        ElMessage({
-            type: "success",
-            message: "配置文件已复制到剪切板",
-        }) &&
-        cache.set("json", data);
-    return data;
-};
-
-const generateYAML = () => {
-    const jsonData = generateJSON();
-    const data = json2yaml(jsonData);
-    jsonData &&
-        CopyText(data) &&
-        ElMessage({
-            type: "success",
-            message: "配置文件已复制到剪切板",
-        });
-    return data;
+const generate = (type: "json" | "yaml") => {
+    const jsonData = preProcess(deepCopy(formData.value));
+    if (type === "json") {
+        jsonData &&
+            UserOptionsRef.value[0].validCheck() &&
+            CopyText(JSON.stringify(jsonData)) &&
+            cache.set("json", jsonData);
+    } else {
+        const data = json2yaml(jsonData);
+        jsonData && UserOptionsRef.value[0].validCheck() && CopyText(data);
+    }
 };
 
 const restoreCache = () => {

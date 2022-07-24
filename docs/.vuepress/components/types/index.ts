@@ -6,11 +6,17 @@ export interface ICol {
     xl: number;
 }
 
+export type TOptionStyle = "input" | "check";
+
+export type TInputType = "number" | "text";
+
 export interface IOption {
     prop: string;
     name: string;
-    type: string;
+    style: TOptionStyle;
+    type?: TInputType;
     info?: string;
+    required?: boolean;
 }
 
 export interface IConfig {
