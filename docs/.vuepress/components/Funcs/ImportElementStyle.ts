@@ -12,6 +12,9 @@ import "element-plus/theme-chalk/el-message.css";
 import "element-plus/theme-chalk/el-button.css";
 import "element-plus/theme-chalk/el-divider.css";
 import "element-plus/theme-chalk/el-checkbox.css";
+import "element-plus/theme-chalk/el-tooltip.css";
+import "element-plus/theme-chalk/el-popper.css";
+import "element-plus/theme-chalk/el-icon.css";
 
 export default function ImportElementStyle(): void {
     console.log("Components Registered");

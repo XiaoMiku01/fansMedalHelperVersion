@@ -13,6 +13,8 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v3
+              with:
+                fetch-depth: 0
 
             - name: Install Node.js
               uses: actions/setup-node@v3
@@ -26,18 +28,18 @@ jobs:
                 version: 7
                 run_install: false
 
-            # - name: Get pnpm store directory
-            #   id: pnpm-cache
-            #   run: |
-            #     echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+            - name: Get pnpm store directory
+              id: pnpm-cache
+              run: |
+                echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
 
-            # - uses: actions/cache@v3
-            #   name: Setup pnpm cache
-            #   with:
-            #     path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-            #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-            #     restore-keys: |
-            #       ${{ runner.os }}-pnpm-store-
+            - uses: actions/cache@v3
+              name: Setup pnpm cache
+              with:
+                path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+                key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                restore-keys: |
+                  ${{ runner.os }}-pnpm-store-
 
             - name: Install dependencies
               run: pnpm install
@@ -57,19 +59,3 @@ jobs:
               env:
                   # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            
-            - name: Replace base path
-              run: sed -i 's/fansMedalHelperVersion\///g' docs/.vuepress/config.ts
-
-            # 重新构建脚本
-            - name: Build VuePress site
-              run: pnpm docs:build
-            - name: Recall base path
-              run: git checkout -- docs/.vuepress/config.ts
-            # 发布到 Cloud Flare Pages
-            - name: Publish Cloud Flare Pages
-              uses: cloudflare/wrangler-action@2.0.0
-              with:
-                apiToken: ${{ secrets.CF_API_TOKEN }}
-                accountId: ${{ secrets.CF_ACCOUNT_ID }}
-                command: pages publish --project-name fansmedalhelperdocs --branch main docs/.vuepress/dist

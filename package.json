@@ -22,6 +22,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.6",
     "@vue/devtools-api": "^6.1.4",
     "@vuepress/shared": "2.0.0-alpha.1",
     "@vueuse/core": "^8.6.0",
