@@ -59,3 +59,19 @@ jobs:
               env:
                   # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Replace base path
+              run: sed -i 's/fansMedalHelperVersion\///g' docs/.vuepress/config.ts
+
+            # 重新构建脚本
+            - name: Build VuePress site
+              run: pnpm docs:build
+            - name: Recall base path
+              run: git checkout -- docs/.vuepress/config.ts
+            # 发布到 Cloud Flare Pages
+            - name: Publish Cloud Flare Pages
+              uses: cloudflare/wrangler-action@2.0.0
+              with:
+                apiToken: ${{ secrets.CF_API_TOKEN }}
+                accountId: ${{ secrets.CF_ACCOUNT_ID }}
+                command: pages publish --project-name fansmedalhelperdocs --branch main docs/.vuepress/dist
