@@ -62,9 +62,10 @@ const preProcess = (data) => {
     // turn `MOREPUSH` from string to object
     // turn `ASYNC` `WEARMEDAL` boolean to number
     try {
-        data["MOREPUSH"] = JSON.parse(data["MOREPUSH"]);
-        data["ASYNC"] === true ? (data["ASYNC"] = 1) : (data["ASYNC"] = 0);
-        data["WEARMEDAL"] === true ? (data["WEARMEDAL"] = 1) : (data["WEARMEDAL"] = 0);
+        data["MOREPUSH"] =
+            data["MOREPUSH"] === "" || data["MOREPUSH"] === undefined
+                ? undefined
+                : JSON.parse(data["MOREPUSH"]);
     } catch (error) {
         ElMessage({
             type: "error",
@@ -72,6 +73,8 @@ const preProcess = (data) => {
         });
         return null;
     }
+    data["ASYNC"] === true ? (data["ASYNC"] = 1) : (data["ASYNC"] = 0);
+    data["WEARMEDAL"] === true ? (data["WEARMEDAL"] = 1) : (data["WEARMEDAL"] = 0);
     return data;
 };
 
