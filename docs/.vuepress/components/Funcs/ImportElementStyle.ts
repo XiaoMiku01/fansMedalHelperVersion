@@ -15,6 +15,8 @@ import "element-plus/theme-chalk/el-checkbox.css";
 import "element-plus/theme-chalk/el-tooltip.css";
 import "element-plus/theme-chalk/el-popper.css";
 import "element-plus/theme-chalk/el-icon.css";
+import "element-plus/theme-chalk/el-card.css";
+import "element-plus/theme-chalk/el-option.css";
 
 export default function ImportElementStyle(): void {
     console.log("Components Registered");

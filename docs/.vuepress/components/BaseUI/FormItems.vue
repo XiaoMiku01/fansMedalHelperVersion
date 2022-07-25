@@ -60,29 +60,6 @@ const onInputChange = (value, option) => {
         props.formData[option.prop] = parseInt(value);
     }
 };
-
-const validCheck = () => {
-    // check valid in self domain
-    const { optionConfig } = props;
-    for (const item of optionConfig.items) {
-        const flag =
-            item.required &&
-            (props.formData[item.prop] === undefined || props.formData[item.prop] === "");
-        if (!flag) continue;
-        else {
-            ElMessage({
-                type: "error",
-                message: "请填写必填值" + item.name,
-            });
-            return false;
-        }
-    }
-    return true; // 验证完毕
-};
-
-defineExpose({
-    validCheck,
-});
 </script>
 
 <style scoped>
