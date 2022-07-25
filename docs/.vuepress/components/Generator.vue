@@ -49,7 +49,7 @@ const defaultConfig = afterProcess(cache.get("json")) || {
     CRON: undefined,
     SENDKEY: undefined,
     MOREPUSH: undefined,
-    PORXY: undefined,
+    PROXY: undefined,
     LIKE_CD: 2,
     SHARE_CD: 5,
     DANMAKU_CD: 6,

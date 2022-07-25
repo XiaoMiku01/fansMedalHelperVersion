@@ -45,7 +45,7 @@ const commonOptionConfigs: IConfig = {
         { prop: "CRON", name: "Corn表达式", style: "input", type: "text" },
         { prop: "SENDKEY", name: "Server酱SENDKEY", style: "input", type: "text" },
         { prop: "MOREPUSH", name: "配置更多推送", style: "input", type: "text" },
-        { prop: "PORXY", name: "推送代理地址", style: "input", type: "text" },
+        { prop: "PROXY", name: "推送代理地址", style: "input", type: "text" },
         { prop: "LIKE_CD", name: "点赞间隔时间", style: "input", type: "number" },
         { prop: "SHARE_CD", name: "分享间隔时间", style: "input", type: "number" },
         { prop: "DANMAKU_CD", name: "弹幕间隔时间", style: "input", type: "number" },
