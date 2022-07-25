@@ -1,37 +1,31 @@
 <template>
-    <el-row>
-        <el-form label-position="top" style="max-width: 800px">
-            <el-row v-for="(USER, index) of formData.USERS" :key="index">
-                <UserOption v-bind="{ index, formData }"></UserOption>
-                <FormItems
-                    ref="UserOptionsRef"
-                    v-bind="{ formData: USER, optionConfig: userOptionConfigs }"
-                ></FormItems>
-            </el-row>
-            <el-divider />
-            <el-row>
-                <FormItems v-bind="{ formData, optionConfig: commonOptionConfigs }"></FormItems>
-            </el-row>
-        </el-form>
-        <CodePreview
-            :code="codePreview"
-            :language="currentLanguage"
-            :CodePreviewConfig="codePreviewConfig"
-            @select-change="handleLanguageChange"
-        ></CodePreview>
-    </el-row>
+    <el-form label-position="top" style="max-width: 800px">
+        <el-row v-for="(USER, index) of formData.USERS" :key="index">
+            <UserOption v-bind="{ index, formData }"></UserOption>
+            <FormItems
+                ref="UserOptionsRef"
+                v-bind="{ formData: USER, optionConfig: userOptionConfigs }"
+            ></FormItems>
+        </el-row>
+        <el-divider />
+        <el-row>
+            <FormItems v-bind="{ formData, optionConfig: commonOptionConfigs }"></FormItems>
+        </el-row>
+        <el-divider />
+        <el-button type="primary" @click="generate('json')">生成JSON</el-button>
+        <el-button type="primary" @click="generate('yaml')">生成YAML</el-button>
+        <el-button @click="restoreCache">清除缓存</el-button>
+    </el-form>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { ElRow, ElForm, ElButton, ElDivider, ElMessage } from "element-plus";
 import UserOption from "./BaseUI/UserOption.vue";
 import FormItems from "./BaseUI/FormItems.vue";
-import CodePreview from "./BaseUI/CodePreview.vue";
 import ImportElementStyle from "./Funcs/ImportElementStyle";
 import { deepCopy, cache } from "./Funcs/Utils";
 import { userOptionConfigs, commonOptionConfigs } from "./Config/GeneratorOptionConfigs";
-import { codePreviewConfig } from "./Config/CodePreviewConfig";
 import CopyText from "./Funcs/CopyText";
 import json2yaml from "./Funcs/Json2Yaml";
 
@@ -89,20 +83,29 @@ const preProcess = (data) => {
     return data;
 };
 
-const generateJSON = () => preProcess(deepCopy(formData.value));
-
-const currentLanguage = ref("json");
-
-const handleLanguageChange = (val) => (currentLanguage.value = val);
-
-const codePreview = computed(() => {
-    if (currentLanguage.value === "json") {
-        return JSON.stringify(generateJSON(), null, "  ");
+const generate = (type: "json" | "yaml") => {
+    const jsonData = preProcess(deepCopy(formData.value));
+    if (type === "json") {
+        jsonData &&
+            UserOptionsRef.value[0].validCheck() &&
+            CopyText(JSON.stringify(jsonData)) &&
+            cache.set("json", jsonData);
     } else {
-        const data = json2yaml(generateJSON());
-        return data;
+        const data = json2yaml(jsonData);
+        jsonData && UserOptionsRef.value[0].validCheck() && CopyText(data);
     }
-});
+};
+
+const restoreCache = () => {
+    cache.remove("json");
+    ElMessage({
+        type: "success",
+        message: "本地缓存已清除，即将刷新",
+    });
+    setTimeout(() => {
+        window?.location.reload();
+    }, 1500);
+};
 
 ImportElementStyle();
 </script>

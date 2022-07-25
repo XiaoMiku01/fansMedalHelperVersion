@@ -12,7 +12,6 @@ specifiers:
   '@vuepress/utils': 2.0.0-beta.46
   '@vueuse/core': ^8.6.0
   element-plus: ^2.2.3
-  highlight.js: ^11.6.0
   sass: ^1.52.2
   vue: ^3.2.36
   vue-router: ^4.0.15
@@ -25,7 +24,6 @@ dependencies:
   '@vuepress/shared': 2.0.0-alpha.1
   '@vueuse/core': 8.6.0_vue@3.2.36
   element-plus: 2.2.3_vue@3.2.36
-  highlight.js: registry.npmmirror.com/highlight.js/11.6.0
   sass: 1.52.2
   vue-router: 4.0.15_vue@3.2.36
   vuepress-plugin-pixi-live2d-display: 1.0.1
@@ -1781,10 +1779,3 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  registry.npmmirror.com/highlight.js/11.6.0:
-    resolution: {integrity: sha512-ig1eqDzJaB0pqEvlPVIpSSyMaO92bH1N2rJpLMN/nX396wTpDA4Eq0uK+7I/2XG17pFaaKE0kjV/XPeGt7Evjw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/highlight.js/-/highlight.js-11.6.0.tgz}
-    name: highlight.js
-    version: 11.6.0
-    engines: {node: '>=12.0.0'}
-    dev: false
