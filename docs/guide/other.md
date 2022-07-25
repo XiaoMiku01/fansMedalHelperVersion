@@ -71,7 +71,7 @@ sidebar:
 -   拉取镜像
 
     ```shell
-    docker pull xiaomiku01/fansMedalHelper:latest
+    docker pull xiaomiku01/fansmedalhelper:latest
     ```
 
 -   创建运行容器
