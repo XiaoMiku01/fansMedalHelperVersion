@@ -1,4 +1,4 @@
-export interface ICol {
+interface ICol {
     xs: number;
     sm: number;
     md: number;
@@ -6,11 +6,11 @@ export interface ICol {
     xl: number;
 }
 
-export type TOptionStyle = "input" | "check";
+type TOptionStyle = "input" | "check";
 
-export type TInputType = "number" | "text";
+type TInputType = "number" | "text";
 
-export interface IOption {
+interface IOption {
     prop: string;
     name: string;
     style: TOptionStyle;
@@ -22,4 +22,19 @@ export interface IOption {
 export interface IConfig {
     col: ICol;
     items: IOption[];
+}
+interface ICodePreviewHeaderItem {
+    enable: boolean;
+    prop?: string;
+    config?: any;
+}
+
+interface ICodePreviewHeaders {
+    [key: string]: ICodePreviewHeaderItem;
+}
+
+export interface ICodePreviewConfig {
+    title: string;
+    cache?: string;
+    headers: ICodePreviewHeaders;
 }
