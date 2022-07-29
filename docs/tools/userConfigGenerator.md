@@ -14,7 +14,8 @@ sidebar: false
 |黑名单        | 不进行任务的主播 `UID`  多个用英文逗号 `,` 分开             | 208259,208258 |
 | Corn表达式           | 只在本地部署时使用内置定时器需要填写 (本项目只支持5位表达式)            |0 0 * * *|
 | Server酱SENDKEY               | Server酱微信推送服务  [获取地址](https://sct.ftqq.com/)           |SCT1344T9ruheji5FHmdxUKBqGLkLxxx|
-| 配置更多推送 | 更多种类的推送             | { "notifier": "pushplus", "params": { "markdown": False, "token": "abcabcacb" } |
+| 配置更多推送 | 更多种类的推送             | { "notifier": "pushplus", "params": { "markdown": False, "token": "abcabcacb" } |  
+| PROXY | 推送代理地址(国外使用境外推送时填写,支持 http/socks4/socks5 不支持 https) | socks5://127.0.0.1:1080 |
 
 ## 多种推送方式配置 MOREPUSH 参数 （可选）
 
