@@ -71,6 +71,7 @@ jobs:
             # 发布到 Cloud Flare Pages
             - name: Publish Cloud Flare Pages
               uses: cloudflare/wrangler-action@2.0.0
+              if: github.repository_owner == 'XiaoMiku01'
               with:
                 apiToken: ${{ secrets.CF_API_TOKEN }}
                 accountId: ${{ secrets.CF_ACCOUNT_ID }}
