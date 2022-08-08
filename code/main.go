@@ -20,7 +20,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"version":   "0.3.5",
 			"changelog": "适配了亲密度新规则, 目前理论每个牌子都能拿满 1500 亲密度(以实际情况为准)  \n更新方法见文档：doc.loveava.top/ 若更新失败 尝试重新部署 \n",
-			"notice":    "一曲惊鸿，名动九州~，乃琳生日会来啦~！8月7日晚8点，和@乃琳Queen 一起“穿越时空”，享受一场浪漫、开心的生日之旅吧！",
+			"notice":    "",
 		})
 	})
 	router.Run(":9000")
