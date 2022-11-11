@@ -81,14 +81,14 @@ SIGNINGROUP: 2 # 应援团签到CD时间,单位秒,默认2秒,设置为0则不�
 
 | 推送方式                                                                             | 参数                                                                                                               |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| [bark](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865)       | {"notifier":"bark","params":{"markdown":False,"key":"xxxxxx"}}                                                     |
-| [dingtalk](https://open.dingtalk.com/document/group/custom-robot-access) 钉钉机器人  | {"notifier":"dingtalk","params":{"markdown":False,"token":"xxxxxx"}}                                               |
-| [discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) | {"notifier":"discord","params":{"markdown":False,"webhook":"https://discord.com/api/webhooks/xxxxxx"}}             |
-| [pushplus](https://www.pushplus.plus/)                                               | {"notifier":"pushplus","params":{"markdown":False,"token":"xxxxxx"}}                                               |
-| [qmsg](https://qmsg.zendee.cn/)                                                      | {"notifier":"qmsg","params":{"markdown":False,"key":"xxxxxx"}}                                                     |
-| [telegram](https://core.telegram.org/bots)                                           | {"notifier":"telegram","params":{"markdown":False,"token":"xxxxxx","userid":"xxxxxx"}}                             |
+| [bark](https://apps.apple.com/us/app/bark-customed-notifications/id1403753865)       | {"notifier":"bark","params":{"markdown":false,"key":"xxxxxx"}}                                                     |
+| [dingtalk](https://open.dingtalk.com/document/group/custom-robot-access) 钉钉机器人  | {"notifier":"dingtalk","params":{"markdown":false,"token":"xxxxxx"}}                                               |
+| [discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) | {"notifier":"discord","params":{"markdown":false,"webhook":"https://discord.com/api/webhooks/xxxxxx"}}             |
+| [pushplus](https://www.pushplus.plus/)                                               | {"notifier":"pushplus","params":{"markdown":false,"token":"xxxxxx"}}                                               |
+| [qmsg](https://qmsg.zendee.cn/)                                                      | {"notifier":"qmsg","params":{"markdown":false,"key":"xxxxxx"}}                                                     |
+| [telegram](https://core.telegram.org/bots)                                           | {"notifier":"telegram","params":{"markdown":false,"token":"xxxxxx","userid":"xxxxxx"}}                             |
 | [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236) 企业微信   | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
-| [wechatworkbot ](https://developer.work.weixin.qq.com/document/path/91770) 企业微信  | {"notifier":"wechatworkbot","params":{"markdown":False,"key":"xxxxxx"}}                                            |
+| [wechatworkbot ](https://developer.work.weixin.qq.com/document/path/91770) 企业微信  | {"notifier":"wechatworkbot","params":{"markdown":false,"key":"xxxxxx"}}                                            |
 | [lark](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) 飞书       | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}}                                   |
 
 ::: tip 例如
@@ -96,10 +96,10 @@ SIGNINGROUP: 2 # 应援团签到CD时间,单位秒,默认2秒,设置为0则不�
 我想用 `pushplus` 推送消息，在官方申请到的 `token` 为： `abcabcacb` ，配置文件中的 `MOREPUSH` 就如下填写
 
 ```yaml
-MOREPUSH: { "notifier": "pushplus", "params": { "markdown": False, "token": "abcabcacb" } }
+MOREPUSH: { "notifier": "pushplus", "params": { "markdown": false, "token": "abcabcacb" } }
 ```
 
-`markdown` 建议都设为 False。因为可能会出现推送格式异常
+`markdown` 建议都设为 false。因为可能会出现推送格式异常
 
 :::
 
