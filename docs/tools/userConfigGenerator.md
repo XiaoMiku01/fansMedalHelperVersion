@@ -27,6 +27,6 @@ sidebar: false
 | [pushplus](https://www.pushplus.plus/)                                               | {"notifier":"pushplus","params":{"markdown":false,"token":"xxxxxx"}}                                               |
 | [qmsg](https://qmsg.zendee.cn/)                                                      | {"notifier":"qmsg","params":{"markdown":false,"key":"xxxxxx"}}                                                     |
 | [telegram](https://core.telegram.org/bots)                                           | {"notifier":"telegram","params":{"markdown":false,"token":"xxxxxx","userid":"xxxxxx"}}                             |
-| [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236) 企业微信   | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
+| [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236) 企业微信   | {"notifier":"wechatworkapp","params":{"markdown":true,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
 | [wechatworkbot ](https://developer.work.weixin.qq.com/document/path/91770) 企业微信  | {"notifier":"wechatworkbot","params":{"markdown":false,"key":"xxxxxx"}}                                            |
 | [lark](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) 飞书       | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}}                                   |

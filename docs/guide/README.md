@@ -10,23 +10,22 @@ sidebar:
 
 # 开始
 
-当前版本：0.3.5  
-反馈交流群：979245756
+当前版本：0.3.6
 
 ## 目前已实现功能
 
 | 功能                       | 奖励                     |
 | -------------------------- | ------------------------ |
 | 每日直播区签到             | 直播区经验，银瓜子，辣条 |
-| 每日点赞 1 次直播间        | 200 亲密度            |
-| 每日分享 1 次直播间        | 100 亲密度            |
-| 每日观看 65 分钟           | 100\*13 亲密度            |
-| 每日弹幕打卡               | 点亮牌子           |
+| 每日点赞 1 次直播间        | 100 亲密度               |
+| 每日分享 1 次直播间        | 100 亲密度               |
+| 每日观看 65 分钟           | 100\*13 亲密度           |
+| 每日弹幕打卡               | 点亮牌子                 |
 | 每日应援团签到(如果有的话) | 10\*1 亲密度             |
 | 多账号支持                 |                          |
 | 微信推送通知               |                          |
 
-<small>ps: 新版 B 站粉丝牌的亲密度每一个牌子都将单独计算  </small>
+<small>ps: 新版 B 站粉丝牌的亲密度每一个牌子都将单独计算 </small>
 
 ## 配置文件说明 users.yaml
 
@@ -51,14 +50,12 @@ CRON: # 0 0 * * *
 SENDKEY: # Server酱微信推送 可选 获取地址：https://sct.ftqq.com/
 MOREPUSH: # 更多种类的推送 详细配置见文档
 
-PROXY:  # 推送代理地址,如：http://1.2.3.4:5678 支持 http/socks4/socks5 不支持 https 不用代理的不用填
+PROXY: # 推送代理地址,如：http://1.2.3.4:5678 支持 http/socks4/socks5 不支持 https 不用代理的不用填
 #########以下为自定义配置#########
 
 ASYNC: 1 # 异步执行,默认异步执行,设置为0则同步执行,开启异步后,将不支持设置点赞和分享CD时间
 
 LIKE_CD: 2 # 点赞间隔时间,单位秒,默认2秒,仅为同步时生效,设置为0则不点赞
-
-SHARE_CD: 5 # 分享间隔时间,单位秒,默认5秒,仅为同步时生效,设置为0则不分享
 
 DANMAKU_CD: 6 # 弹幕间隔时间,单位秒,默认6秒,设置为0则不发弹幕打卡,只能同步打卡
 
@@ -87,7 +84,7 @@ SIGNINGROUP: 2 # 应援团签到CD时间,单位秒,默认2秒,设置为0则不�
 | [pushplus](https://www.pushplus.plus/)                                               | {"notifier":"pushplus","params":{"markdown":false,"token":"xxxxxx"}}                                               |
 | [qmsg](https://qmsg.zendee.cn/)                                                      | {"notifier":"qmsg","params":{"markdown":false,"key":"xxxxxx"}}                                                     |
 | [telegram](https://core.telegram.org/bots)                                           | {"notifier":"telegram","params":{"markdown":false,"token":"xxxxxx","userid":"xxxxxx"}}                             |
-| [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236) 企业微信   | {"notifier":"wechatworkapp","params":{"markdown":True,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
+| [wechatworkapp](https://developer.work.weixin.qq.com/document/path/90236) 企业微信   | {"notifier":"wechatworkapp","params":{"markdown":true,"corpid":"xxxxxx","corpsecret":"xxxxxx","agentid":"xxxxxx"}} |
 | [wechatworkbot ](https://developer.work.weixin.qq.com/document/path/91770) 企业微信  | {"notifier":"wechatworkbot","params":{"markdown":false,"key":"xxxxxx"}}                                            |
 | [lark](https://open.feishu.cn/document/ukTMukTMukTM/ucTM5YjL3ETO24yNxkjN) 飞书       | {"notifier": "lark", "params": {"webhook": "xxxxxx", "keyword": "", "sign": ""}}                                   |
 
@@ -107,7 +104,7 @@ MOREPUSH: { "notifier": "pushplus", "params": { "markdown": false, "token": "abc
 
 > 任务完成后直播间的亲密度丢失，出现只有 200 的情况
 
-B站亲密度结算有延迟，可能长达几个小时。实际上已经得到1500亲密度了。多留意。
+B 站亲密度结算有延迟，可能长达几个小时。实际上已经得到 1500 亲密度了。多留意。
 
 ## 赞助
 
