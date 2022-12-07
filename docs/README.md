@@ -3,14 +3,14 @@ home: true
 heroImage: /images/logo.png
 heroImageAlt: Logo
 heroText: B 站粉丝牌助手
-tagline: 适配新版粉丝牌机制 当前版本：0.3.5
+tagline: 适配新版粉丝牌机制 当前版本：0.3.6
 actions:
     - text: 快速上手
       link: /guide/
       type: primary
 features:
     - title: 全自动完成任务
-      details: 自动完成每日点赞、分享、弹幕打卡、观看三十分钟任务。
+      details: 自动完成每日点赞、弹幕打卡、观看三十分钟任务。
     - title: 支持0基础免费部署运行
       details: 文档详细，简洁明了，支持本地运行、云函数多种部署方式。
     - title: 支持多账号
