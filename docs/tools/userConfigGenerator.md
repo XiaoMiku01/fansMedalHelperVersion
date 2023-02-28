@@ -7,6 +7,7 @@ sidebar: false
 <div align="center"><Generator /></div>
 
 # 字段说明
+
 | 字段                       | 说明                     | 例如|
 | -------------------------- | ------------------------ | ----|
 | Access_key (必填)            | B站账号鉴权  [获取方式](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool) | e56bb4fd8fd9b249fcf86cf3a514c451 |

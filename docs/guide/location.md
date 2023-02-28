@@ -1,11 +1,12 @@
 ---
 sidebar:
     - /guide/
-    - /guide/location/
     - /guide/ali-cloud-simple/
     - /guide/ali-cloud/
     - /guide/tx-cloud/
-    - /guide/other/
+    - /guide/docker/
+    - /guide/qinglong/
+    - /guide/location/
 ---
 
 # 本地/服务器部署
@@ -14,7 +15,7 @@ sidebar:
 环境需求：Python 版本大于 3.8
 :::
 
-## 克隆本项目 安装依赖
+## 克隆项目并安装依赖
 
 ```shell
 git clone https://github.com/XiaoMiku01/fansMedalHelper.git
@@ -26,18 +27,18 @@ pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 下载获取工具 [Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
 
-双击打开，扫码登录，会得到 `access_key` 即可
+双击打开，扫码登录，会得到 `access_key` 。
 
 ## 填写配置文件 users.yaml
 
-windows 以记事本方式打开  
-linux 用 vim
+复制 `users.example.yaml` 并命名为 `users.yaml`，并填写 `users.yaml`。Windows 使用记事本方式打开，Linux 使用用 vim。
 
 ```shell
+cp users.example.yaml users.yaml
 vim users.yaml
 ```
 
-配置文件说明 ：[配置文件](./#配置文件说明-users-yaml)
+配置文件说明：[配置文件](./#配置文件说明-users-yaml)
 
 ## 运行主程序
 
@@ -51,7 +52,7 @@ python main.py
 
 ## 更新方式
 
-进入项目文件夹后，执行 `git pull` 更新代码
+进入项目文件夹后，执行 `git pull` 更新代码。
 
 ```shell
 git pull
