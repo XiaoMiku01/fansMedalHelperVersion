@@ -28,10 +28,6 @@ export default defineUserConfig({
                         text: "部署方式",
                         children: [
                             {
-                                text: "本地/服务器部署",
-                                link: "/guide/location",
-                            },
-                            {
                                 text: "阿里云函数部署（0 基础）",
                                 link: "/guide/ali-cloud-simple",
                             },
@@ -44,8 +40,16 @@ export default defineUserConfig({
                                 link: "/guide/tx-cloud",
                             },
                             {
-                                text: "其他方式部署",
-                                link: "/guide/other",
+                                text: "Docker 部署",
+                                link: "/guide/docker",
+                            },
+                            {
+                                text: "青龙面板部署",
+                                link: "/guide/qinglong",
+                            },
+                            {
+                                text: "本地/服务器部署",
+                                link: "/guide/location",
                             },
                         ],
                     },
