@@ -21,26 +21,28 @@ sidebar:
     apscheduler
     ```
 
-- 左侧「脚本管理」，点击右上角加号，选择“新建文件”，填写脚本名称 `pull.sh`。
+- 左侧「脚本管理」，点击右上角加号，选择“新建文件”，填写脚本名称 `pull_fansMedalHelper.sh`。
     ![](../images/other/image1.png)
 
 - 输入以下内容，点击“保存”。
 
     ```shell
     git clone https://github.com/XiaoMiku01/fansMedalHelper.git
+    cp fansMedalHelper/users.example.yaml fansMedalHelper/users.yaml
     ```
 
     ![](../images/other/image2.png)
 
-- 左侧「定时任务」，然后新建任务，名称随便填，命令填 `task pull.sh`, 定时规则随便填，因为这个任务只要执行一次，确定。
+- 左侧「定时任务」，然后新建任务，名称随便填，命令填 `task pull_fansMedalHelper.sh`, 定时规则随便填，因为这个任务只要执行一次，确定。
     ![](../images/other/image3.png)
 
-- 点击右侧运行，打开日志，等待仓库拉取完成，之后就可以禁用或者删除这个脚本了。
+- 点击右侧运行，打开日志，等待仓库拉取完成，之后**禁用或者删除这个脚本**。
 
-- 回到脚本管理，找到 `fansMedalHelper/users.example.yaml` 文件，复制全部内容。然后新建 `fansMedalHelper/users.yaml` 文件，将复制的内容粘贴进去，并填写自己的配置，点击“保存”。
+- 回到脚本管理，找到 `fansMedalHelper/users.yaml` 文件，填写自己的配置，点击“保存”。
     ![](../images/other/image5.png)
     ::: tip 提示
     配置文件说明 ：[配置文件](./#配置文件说明-users-yaml)
+
     B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
     :::
 
@@ -52,7 +54,7 @@ sidebar:
     日志中可能出现乱码，是正常现象，因为是输出的日志无法显示文字颜色。
     :::
 
-- 如何更新  
+- 如何更新
     新建一个名为 `update_fansMedalHelper.sh` 的脚本，内容为：
 
     ```shell

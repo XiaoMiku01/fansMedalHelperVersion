@@ -36,11 +36,10 @@ sidebar:
 
 ## 获取 Github 授权并 Fork 仓库
 
+### 授权 Github 账号
+
 云函数开通完成后，从主页进入`应用/通过仓库导入应用`，按照下图配置应用。
 
-支持使用 Github 导入，需提前授权 Github 账号到阿里云。
-
-### 授权 Github 账号
 
 ![2](../images/ali-cloud-simple/2.png)
 
@@ -48,7 +47,7 @@ sidebar:
 
 ### Fork 代码仓库
 
-授权成功后，用授权的账号访问仓库[XiaoMiku01/fansMedalHelper](https://github.com/XiaoMiku01/fansMedalHelper)并点击Fork。
+使用授权的账号登录 GitHub，并访问仓库[XiaoMiku01/fansMedalHelper](https://github.com/XiaoMiku01/fansMedalHelper)，然后点击 Fork。
 
 ![4](../images/ali-cloud-simple/4.png)  
 
@@ -65,15 +64,20 @@ B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · Xiao
 
 ## 配置应用
 
-Fork 完成后，回到应用配置界面，按下图配置应用。
+回到云函数的应用配置界面，继续按下图配置应用。
 
 ![5](../images/ali-cloud-simple/5.png)
 
 * 仓库名称: `fansMedalHelper`
 * 角色名称: 按提示创建
-* 高级配置/环境变量
-* 选择`使用表单编辑`，创建一个`USERS`变量，**全为大写** 值填写刚刚剪切板的内容  
+* 点击：高级配置 - 流水线配置方案 - 高级配置 - 环境变量
+* 选择`使用表单编辑`，创建一个`USERS`变量，**全为大写** 值填写刚刚剪切板的内容
+
 ![10](../images/ali-cloud-simple/10.png)
+
+点击最下方**流水线详情**中的**代码源**方块，触发方式选择 **Push 到指定分支触发**，下方分支选择 **master**。
+
+![14](../images/ali-cloud-simple/14.png)
 
 ::: warning 注意
   老用户配置文件中的`WATCHINGLIVE`值为 1 新版本已经更改为 65。
@@ -89,7 +93,7 @@ Fork 完成后，回到应用配置界面，按下图配置应用。
 
 ### 测试函数
 
-完成创建并部署成功后，点击**函数名**，进入函数配置界面。
+完成创建并部署成功后，点击**默认环境** - **函数名**，进入函数配置界面。
 
 ![6](../images/ali-cloud-simple/6.png)
 

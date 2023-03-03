@@ -38,31 +38,25 @@ sidebar:
 
 ## 配置函数
 
--   选择 **从零开始创建**，函数名随便，运行环境选择 **Python3.9**, 使用示例代码，**处理事件请求**，请求处理程序填 **main.run**，如图：
+- 选择 **使用内置运行时创建**，**处理事件请求**，函数名随便，运行环境选择 **Python3.9**， 使用示例代码，如图：
+    ![](../images/ali-fc/1.png)
 
-    ![](https://s1.ax1x.com/2022/05/27/XnPXcD.md.png)
+- 下翻页面，展开 **高级配置**，**执行超时时间** 修改为 `86400`，**时区**选择 `Asia/Shanghai`。
+    ![](../images/ali-fc/2.png)
 
--   配置触发器，类型选择 **定时触发器**，名称随便填，触发方式选择 **指定时间**，指定时间填你想脚本每天开始执行的时间，下面的不用填，点击 **创建**，如图：
-
-    ![](https://s1.ax1x.com/2022/05/27/XnivGV.md.png)
-
--   进入后先点击 **函数配置**，在 **环境信息** 右边的 **编辑**
-
-    ![](https://s1.ax1x.com/2022/05/27/Xnkght.md.png)
-
--   **执行超时时间** 就填 86400 秒（24 小时） ，**确定**
-
-    ![](https://s1.ax1x.com/2022/05/27/XnAF9x.md.png)
+- 展开 **触发器配置**，类型选择 **定时触发器**，名称随便填，触发方式选择 **指定时间**，指定时间填你想脚本每天开始执行的时间，下面的不用填，点击 **创建**。
+    ![](../images/ali-fc/3.png)
 
 ## 下载脚本源码，并配置用户信息
 
--   回到 **函数代码** 页面，在下方 **终端**中输入或粘贴以下代码：
+- 在 **函数代码** 页面，点击编辑器菜单栏中的 `Terminal` - `New Terminal`（终端 - 新终端）。
+    ![](../images/ali-fc/4.png)
 
+- 在下方 **Terminal（终端）** 中输入或粘贴以下代码：
     ```shell
-    git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -r fansMedalHelper/* . && pip3 install -t . -r requirements.txt
+    git clone https://github.com/XiaoMiku01/fansMedalHelper.git && cp -rf fansMedalHelper/* . && pip3 install -t . -r requirements.txt && cp users.example.yaml users.yaml
     ```
-
-    ![](https://s1.ax1x.com/2022/05/27/XnEBod.md.png)
+    ![](../images/ali-fc/5.png)
 
     ::: warning 注意
     如果出现：
@@ -70,25 +64,19 @@ sidebar:
     说明网络原因拉取失败，请重试几次。
     :::
 
--   `回车` 运行完毕后，左边文件往下翻，找到 `users.example.yaml` 文件，右键复制再粘贴，把新文件右键重命名为`users.yaml`，打开后在里面填写你的配置信息，填写完毕后按 `ctrl`+`s` 保存文件，之后点击右上角 **保存并部署**。
-
-    ![](https://s1.ax1x.com/2022/05/27/XnV7AH.md.png)
+- `回车` 运行完毕后，左边文件往下翻，找到 `users.yaml` 文件，填写你的配置信息，填写完毕后按 `Ctrl + S` 保存文件，之后点击左上方 **部署代码**。
 
     ::: tip 提示
     配置文件说明 ：[配置文件](./#配置文件说明-users-yaml)  
-    由于是云函数触发，配置文件中的 `CRON` 无需填写。
+
     B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
     :::
 
 ## 测试运行，查看日志
 
--   部署完毕后点击左上角 **测试函数** ，之后点击 **实时日志**。
+部署完毕后，点击左上角 **测试函数** ，之后点击 **实时日志**，查看右边日志是否运行正常或者报错，耐心等待运行结束。
 
-    ![](https://s1.ax1x.com/2022/05/27/XnZ2Vg.png)
-
--   之后查看右边日志是否运行正常或者报错，耐心等待运行结束。
-
-    ![](https://s1.ax1x.com/2022/05/27/Xne9sK.md.png)
+![](../images/ali-fc/6.png)
 
 ## 完毕
 
@@ -98,7 +86,7 @@ sidebar:
 
 回到 **函数代码** 页面，在页面下方 **终端**中按顺序输入或粘贴以下代码。
 
-:::warning 
+:::warning
 注意你的所使用的云函数！腾讯云函数与阿里云函数的更新方法并不相同！
 :::
 
