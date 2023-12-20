@@ -70,14 +70,15 @@ SIGNINGROUP: 2 # 应援团签到CD时间,单位秒,默认2秒,设置为0则不�
 # 粉丝牌数大于30的用户建议使用同步，会更加稳定。缺点就是速度比较慢，但是可以设置点赞和分享的CD时间，避免被B站吞掉亲密度
 # 多用户之间依然是异步，不受配置影响
 ```
+::: tip 提示
+B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
+:::
 
 ::: warning 警告
 请务必严格填写，否则程序将读取失败，可以在这里 [YAML、YML 在线编辑器(格式化校验)-BeJSON.com](https://www.bejson.com/validators/yaml_editor/) 验证你填的 yaml 是否正确。
 :::
 
-::: tip 提示
-B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
-:::
+
 
 ## 多种推送方式配置 MOREPUSH 参数 （可选）
 
