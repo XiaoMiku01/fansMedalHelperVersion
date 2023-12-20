@@ -75,6 +75,10 @@ SIGNINGROUP: 2 # 应援团签到CD时间,单位秒,默认2秒,设置为0则不�
 请务必严格填写，否则程序将读取失败，可以在这里 [YAML、YML 在线编辑器(格式化校验)-BeJSON.com](https://www.bejson.com/validators/yaml_editor/) 验证你填的 yaml 是否正确。
 :::
 
+::: tip 提示
+B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
+:::
+
 ## 多种推送方式配置 MOREPUSH 参数 （可选）
 
 | 推送方式                                                                             | 参数                                                                                                               |

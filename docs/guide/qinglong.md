@@ -42,8 +42,6 @@ sidebar:
     ![](../images/other/image5.png)
     ::: tip 提示
     配置文件说明 ：[配置文件](./#配置文件说明-users-yaml)
-
-    B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
     :::
 
 - 保存后新建定时任务，名称随便填，命令填 `task fansMedalHelper/index.py`, 定时规则填每天执行的时间，确定。
