@@ -12,9 +12,7 @@ sidebar:
 # 腾讯云函数部署
 
 ::: warning 注意
-在首次开通腾讯云 SCF 功能的**前三个月可以免费使用**，之后每个月收取*12.8 元*。
-
-学生认证后，可以申请*3.24 元 3 年*的套餐包。具体规则详见[官方宣传页](https://cloud.tencent.com/act/campus)。
+在首次开通[腾讯云 SCF 功能](https://cloud.tencent.com/product/scf)的**前三个月可以免费使用**，之后每个月收取*12.8 元*。
 :::
 
 ## 创建函数并初始化
@@ -74,7 +72,6 @@ sidebar:
 ::: tip 提示
 配置文件说明 ：[配置文件](./#配置文件说明-users-yaml)  
 由于是云函数触发，配置文件中的 `CRON` 无需填写。
-B 站 `access_key` 获取工具：[Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
 :::
 
 部署成功后，点击**测试**，在下方控制台可查看日志输出，耐心等待运行完毕即可。

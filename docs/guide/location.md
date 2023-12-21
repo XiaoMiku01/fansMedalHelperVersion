@@ -23,12 +23,6 @@ cd fansMedalHelper
 pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-## 获取 B 站账号的 access_key
-
-下载获取工具 [Release B 站 access_key 获取工具 · XiaoMiku01/fansMedalHelper (github.com)](https://github.com/XiaoMiku01/fansMedalHelper/releases/tag/logintool)
-
-双击打开，扫码登录，会得到 `access_key` 。
-
 ## 填写配置文件 users.yaml
 
 复制 `users.example.yaml` 并命名为 `users.yaml`，并填写 `users.yaml`。Windows 使用记事本方式打开，Linux 使用用 vim。
