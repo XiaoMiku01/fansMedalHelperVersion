@@ -1,0 +1,1 @@
+const t={key:"v-2fb75211",path:"/tools/fansMedalCaculator.html",title:"\u7C89\u4E1D\u724C\u7B49\u7EA7\u8BA1\u7B97\u5668",lang:"zh-CN",frontmatter:{sidebar:!1},excerpt:"",headers:[],git:{updatedTime:1654956756e3,contributors:[{name:"ZiuChen",email:"457353192@qq.com",commits:1}]},filePathRelative:"tools/fansMedalCaculator.md"};export{t as data};
